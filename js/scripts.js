@@ -5,4 +5,7 @@ menu.addEventListener('click', () => {
         crosshr.classList.toggle('cross');
     })
     document.querySelector('#menu').classList.toggle('cross');
+    document.querySelectorAll('#menu a').forEach(menulink => {
+        menulink.classList.toggle('cross');
+    })
 })

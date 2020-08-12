@@ -8,6 +8,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 nav {
@@ -46,25 +47,25 @@ nav img {
 }
 
 #hamburger_button hr:first-of-type.cross {
-    transform: translateY(.45em) rotate(-45deg);
+    transform: translateY(.35em) rotate(-45deg);
 }
 
 #hamburger_button hr:last-of-type.cross {
-    transform: translateY(-.45em) rotate(45deg);
+    transform: translateY(-.35em) rotate(45deg);
 }
 
 #menu {
     position: absolute;
     width: 30vw;
     height: 100vh;
+    padding: 20px;
     top: 0;
     background-color: #cccccc;
     z-index: 1;
     display: flex;
     flex-flow: column;
-    align-items: center;
     justify-content: center;
-    transition: .5s ease;
+    transition: .4s ease;
     right: -30vw;
 }
 
@@ -73,7 +74,13 @@ nav img {
 }
 
 #menu a {
+    margin: 10px 60px;
     text-decoration: none;
-    font-size: 5rem;
+    font-size: 3rem;
     color: black;
+    transition: 0.8s ease;
+}
+
+#menu a.cross {
+    margin: 10px 10px;
 }
