@@ -36,6 +36,10 @@ nav img {
     width: 1.8rem;
     height: 1.5rem;
     z-index: 2;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 #hamburger_button::before,
