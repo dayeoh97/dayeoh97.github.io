@@ -30,28 +30,41 @@ nav img {
 }
 
 #hamburger_button {
-    display: flex;
-    flex-flow: column;
-    width: 30px;
-    height: 90%;
     display: block;
+    cursor: pointer;
+    position: relative;
+    width: 1.8rem;
+    height: 1.5rem;
     z-index: 2;
 }
 
-#hamburger_button hr{
+#hamburger_button::before,
+#hamburger_button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.40rem;
     width: 100%;
-    height: 2px;
     background-color: black;
-    border: solid;
-    transition: .5s ease;
+    transition: transform 500ms ease;
 }
 
-#hamburger_button hr:first-of-type.cross {
-    transform: translateY(.35em) rotate(-45deg);
+#hamburger_button::before {
+    top: 0;
+    transform-origin: top right;
 }
 
-#hamburger_button hr:last-of-type.cross {
-    transform: translateY(-.35em) rotate(45deg);
+#hamburger_button::after {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+#hamburger_button.cross::before {
+    transform: rotate(-45deg);
+}
+
+#hamburger_button.cross::after {
+    transform: translateY(0.1em) rotate(45deg);
 }
 
 #menu {
@@ -81,6 +94,6 @@ nav img {
     transition: 0.8s ease;
 }
 
-#menu a.cross {
+#menu.cross a {
     margin: 10px 10px;
 }
