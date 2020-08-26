@@ -8,6 +8,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 nav {
@@ -29,42 +30,59 @@ nav img {
 }
 
 #hamburger_button {
-    display: flex;
-    flex-flow: column;
-    width: 30px;
-    height: 90%;
     display: block;
+    cursor: pointer;
+    position: relative;
+    width: 1.8rem;
+    height: 1.5rem;
     z-index: 2;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
-#hamburger_button hr{
+#hamburger_button::before,
+#hamburger_button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.40rem;
     width: 100%;
-    height: 2px;
     background-color: black;
-    border: solid;
-    transition: .5s ease;
+    transition: transform 500ms ease;
 }
 
-#hamburger_button hr:first-of-type.cross {
-    transform: translateY(.45em) rotate(-45deg);
+#hamburger_button::before {
+    top: 0;
+    transform-origin: top right;
 }
 
-#hamburger_button hr:last-of-type.cross {
-    transform: translateY(-.45em) rotate(45deg);
+#hamburger_button::after {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+#hamburger_button.cross::before {
+    transform: rotate(-45deg);
+}
+
+#hamburger_button.cross::after {
+    transform: translateY(0.1em) rotate(45deg);
 }
 
 #menu {
     position: absolute;
     width: 30vw;
     height: 100vh;
+    padding: 20px;
     top: 0;
     background-color: #cccccc;
     z-index: 1;
     display: flex;
     flex-flow: column;
-    align-items: center;
     justify-content: center;
-    transition: .5s ease;
+    transition: .4s ease;
     right: -30vw;
 }
 
@@ -73,7 +91,13 @@ nav img {
 }
 
 #menu a {
+    margin: 10px 60px;
     text-decoration: none;
-    font-size: 5rem;
+    font-size: 3rem;
     color: black;
+    transition: 0.8s ease;
+}
+
+#menu.cross a {
+    margin: 10px 10px;
 }
