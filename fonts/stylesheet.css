@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Radio Grotesk';
+    src: url('RadioGrotesk-Bold.eot');
+    src: url('RadioGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('RadioGrotesk-Bold.woff2') format('woff2'),
+        url('RadioGrotesk-Bold.woff') format('woff'),
+        url('RadioGrotesk-Bold.ttf') format('truetype'),
+        url('RadioGrotesk-Bold.svg#RadioGrotesk-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Radio Grotesk';
+    src: url('RadioGrotesk-Regular.eot');
+    src: url('RadioGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('RadioGrotesk-Regular.woff2') format('woff2'),
+        url('RadioGrotesk-Regular.woff') format('woff'),
+        url('RadioGrotesk-Regular.ttf') format('truetype'),
+        url('RadioGrotesk-Regular.svg#RadioGrotesk-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
