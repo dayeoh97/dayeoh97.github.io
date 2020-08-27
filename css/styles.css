@@ -8,10 +8,14 @@
 
 body{
     margin: 0;
+    background-color: #FFFCF5;
 }
 
 nav{
     z-index: 2;
+    position: sticky;
+    top: 0;
+    margin-bottom: calc(4rem + 2vw)
 }
 
 #logo{
@@ -70,6 +74,7 @@ nav{
 }
 
 #hamburger-button{
+    position: absolute;
     display: block;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
@@ -155,6 +160,7 @@ nav{
 #menu a{
     transition-delay: 0.1s;
     font-family: 'Radio Grotesk', sans-serif;
+    font-weight: normal;
     text-decoration: none;
     color: transparent;
     font-size: calc(4.5rem + 1vw + 1vh);
@@ -180,3 +186,43 @@ nav{
     color: #1c1c1c;
     margin: 1rem 0 1rem 30%;
 }
+
+.header{
+    font-family: 'Radio Grotesk', sans-serif;
+    font-weight: normal;
+    font-size: calc(2rem + 1.5vw);
+    margin: 0 calc(1rem + 10vw) 0 calc(1.75rem + 17.5vw)
+}
+
+.header span{
+    cursor: pointer;
+    font-family: 'Radio Grotesk', sans-serif;
+    font-weight: normal;
+    font-size: calc(2rem + 1.5vw);
+    color: #5522FD;
+    text-decoration: underline;
+    position: relative;
+}
+
+.header span::before{
+    content: "[Thai-yeah]";
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Radio Grotesk', sans-serif;
+    font-weight: normal;
+    font-size: calc(0.7rem + 1vw);
+    white-space: nowrap;
+    color: #1c1c1c;
+    opacity: 0;
+    transition: 0.5s cubic-bezier(.26,.57,0,1.08);
+}
+
+.header span:hover::before{
+    opacity: 1;
+    top: calc(-1.5rem - 0.8vw);
+}
+
