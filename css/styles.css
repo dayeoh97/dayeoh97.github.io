@@ -403,9 +403,6 @@ footer p{
     font-weight: 500;
     line-height: 1.75rem;
 }
-.wide{
-    margin-left: 16%;
-}
 .section-p span, .section-p span a{
     cursor: pointer;
     text-decoration: underline;
@@ -466,12 +463,6 @@ footer p{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     color: #9D9D9D;
-}
-.large{
-    font-family: 'Epilogue', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #1c1c1c;
 }
 
 .quote{
@@ -663,6 +654,15 @@ footer p{
     border-radius: 3rem;
     transform: translateY(1rem);
 }
+.wide{
+    margin-left: 16%;
+}
+.large{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1c1c1c;
+}
 
 /*about*/
 #about .section-p{
@@ -699,4 +699,32 @@ footer p{
 }
 .links:first-of-type{
     margin-left: 22%;
+}
+
+/*archive page*/
+#archive .p-header{
+    font-size: 1.3rem;
+}
+
+.ldm{
+    margin: 0rem 16% 3rem 16%;
+}
+
+.ldm .carousel-cell{
+    height: calc(27rem + 10vw);
+}
+.flickity-button{
+    background: #D9D9D9!important;
+}
+.flickity-button-icon path{
+    color: #5522FD!important;
+}
+.flickity-prev-next-button{
+    top: calc(100% + 50px)!important;
+}
+.flickity-prev-next-button.previous{
+    left: calc(50% - 55px)!important;
+}
+.flickity-prev-next-button.next{
+    right: calc(50% - 55px)!important;
 }
