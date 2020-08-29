@@ -229,7 +229,7 @@ footer p{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
-    margin: 0 calc(1rem + 10vw) 0 22%;
+    margin: 0 calc(1rem + 10vw) 3rem 22%;
 }
 #missdior .header{
     margin: 0 24% 0 22%;
@@ -662,4 +662,41 @@ footer p{
     background-position: center;
     border-radius: 3rem;
     transform: translateY(1rem);
+}
+
+/*about*/
+#about .section-p{
+    font-weight: 400;
+    width: 32%;
+}
+#about > h1, #about > p{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background-color: rgba(255, 252, 245, 0.79);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+#about > img{
+    z-index: 0;
+    position: fixed;
+    right: 0;
+    top: calc(90px + 4rem + 2vw);
+    width: calc(10rem + 25vw);
+}
+
+#about .large{
+    font-family: 'Radio Grotesk', sans-serif;
+    font-size: 1.7rem;
+}
+
+.links{
+    display: inline-block;
+    margin-right: 4rem;
+    font-family: 'Radio Grotesk', sans-serif;
+    font-weight: bold;
+    color: #5522FD;
+}
+.links:first-of-type{
+    margin-left: 22%;
 }
