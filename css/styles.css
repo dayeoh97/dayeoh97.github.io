@@ -4,6 +4,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-family: 'Epilogue', sans-serif;
+    color: #1c1c1c;
 }
 
 body{
@@ -163,9 +164,9 @@ nav{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     text-decoration: none;
-    color: transparent;
     font-size: calc(4.5rem + 1vw + 1vh);
     margin: 1rem 0 1rem 0;
+    opacity: 0;
 }
 #menu a:nth-of-type(2){
     transition-delay: 0.2s;
@@ -186,7 +187,7 @@ nav{
 }
 #menu.menu-switch a{
     transition: 0.9s cubic-bezier(0.33, 1, 0.68, 1);
-    color: #1c1c1c;
+    opacity: 1;
     margin: 1rem 0 1rem 30%;
 }
 
@@ -195,7 +196,7 @@ footer{
 
 }
 footer h2{
-    font-family: "Radio Grotesk", sans-serif;
+    font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     width: 100%;
 }
@@ -212,7 +213,6 @@ footer svg{
 }
 footer a{
     position: relative;
-    color: #1c1c1c;
 }
 footer a::before{
     content: "Let's chat";
@@ -229,7 +229,12 @@ footer p{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
-    margin: 0 calc(1rem + 10vw) 0 calc(1.75rem + 17.5vw);
+    margin: 0 calc(1rem + 10vw) 0 22%;
+}
+#missdior .header{
+    margin: 0 24% 0 22%;
+    font-size: calc(1.7rem + 1vw);
+    color: #E6CDD4;
 }
 
 .header span{
@@ -266,7 +271,6 @@ footer p{
 
 .case-study{
     text-decoration: none;
-    color: #1c1c1c;
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -345,4 +349,317 @@ footer p{
     transition-duration: 0.7s;
     opacity: 0.8;
     transform: scale(1);
+}
+
+/*miss dior*/
+#missdior nav{
+    position: fixed;
+}
+#missdior #logo img{
+    filter: brightness(0) saturate(100%) invert(47%) sepia(80%) saturate(272%) hue-rotate(287deg) brightness(88%) contrast(91%);
+}
+#missdior #hamburger-button hr{
+    background-color: #BC6886;
+}
+
+.banner-img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#project-title{
+    font-family: 'Radio Grotesk', sans-serif;
+    font-size: 2rem;
+    margin: calc(2rem + 5vw + 0.5vh) 5rem 2rem 22%;
+}
+
+#project-info{
+    margin: 0 5rem 5rem 22%;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: calc(0.60rem + 0.2vw);
+}
+#project-info span{
+    margin-right: 5.5%;
+}
+#project-info h5{
+    color: #9D9D9D;
+    margin: 0;
+}
+#project-info p{
+    margin: 0.5rem 0;
+}
+
+.section-header{
+    text-transform: uppercase;
+    margin: 0 5rem 0.75rem 22%;
+    font-family: 'Radio Grotesk', sans-serif;
+    color: #9D9D9D;
+}
+.section-p{
+    margin: 0 5rem 1rem 22%;
+    width: 40%;
+    font-weight: 500;
+    line-height: 1.75rem;
+}
+.wide{
+    margin-left: 16%;
+}
+.section-p span, .section-p span a{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #BC6886;
+    position: relative;
+}
+.section-p:nth-of-type(2) span::before{
+    content: "";
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    width: 50vh;
+    background-image: url(../img/pr1_originalposter.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0.2rem 1rem #BC6886;
+    opacity: 0;
+    height: 0;
+    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.section-p:nth-of-type(2) span:hover::before{
+    opacity: 1;
+    height: 28.125vh;
+}
+
+#fullscreen-section{
+    position: relative;
+    margin: 12rem 0;
+    padding: 10rem 0;
+    height: 120vh;
+    background-color: black;
+}
+#fullscreen-section::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65%;
+    background-image: url(../img/smoke.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#fullscreen-section::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/missdiortype3.png);
+    background-size: 80%;
+    background-position: 25% 75%;
+    background-repeat: no-repeat;
+}
+
+.p-header{
+    margin: 1.8rem 5rem 0.75rem 22%;
+    font-family: 'Radio Grotesk', sans-serif;
+    font-weight: normal;
+    color: #9D9D9D;
+}
+.large{
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1c1c1c;
+}
+
+.quote{
+    margin: 3em 3rem 3em 22%;
+    width: 45%;
+    font-size: 1.6rem;
+    font-weight: 450;
+    font-style: italic;
+    color: #BC6886;
+}
+#missdior .quote::after{
+    content: "- Christian Dior";
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: normal;
+    color: #1c1c1c;
+    margin: 1rem 0 0 0;
+}
+
+#colours{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 1.8rem 5rem 5rem 22%;
+    padding: 0 1.5rem;
+}
+#colours div{
+    flex: 0 0 auto;
+    margin: 0 2rem 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+}
+#colours div::after{
+    font-size: 0.8rem;
+    font-family: 'Radio Grotesk', sans-serif
+}
+#colours div:first-of-type{
+    background-color: #BC6886;
+}
+#colours div:first-of-type::after{
+    content: "#BC6886";
+}
+#colours div:nth-of-type(2){
+    background-color: #E6CDD4;
+}
+#colours div:nth-of-type(2)::after{
+    content: "#E6CDD46";
+}
+#colours div:last-of-type{
+    background-color: #000000;
+}
+#colours div:last-of-type::after{
+    content: "#000000";
+    color: #FFFCF5;
+}
+
+#type{
+    margin: 1.8rem 5rem 10rem 22%;
+    padding: 0 1.5rem;
+    width: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+}
+
+#type img{
+    height: 5rem;
+    width: 100%;
+    object-fit: contain;
+    object-position: left;
+    grid-column: 1/2;
+    grid-row: 2/7;
+}
+#type h6{
+    margin: 0;
+    text-transform: uppercase;
+    color: #9D9D9D;
+    font-weight: 400;
+    font-size: 0.45rem;
+}
+#type p{
+    margin: 0 0 0.5rem 0;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+#type p:first-of-type{
+    font-weight: 400;
+}
+
+.wide-img{
+    padding: 0 16%;
+    margin: 0 0 5rem 0;
+    width: 100%;
+}
+
+.ticket{
+    margin-bottom: calc(15vw + 10vh);
+    position: relative;
+}
+.ticket::before{
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    right: 14vw;
+    width: 50%;
+    height: 30%;
+    background-image: url(../img/ticketback.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ticket::after{
+    content: "";
+    position: absolute;
+    bottom: 2%;
+    right: 14vw;
+    width: 50%;
+    height: 35%;
+    background-image: url(../img/ticketfront.png);
+    background-size: 105% auto;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+#demo{
+    margin: 7rem 16% 8rem 16%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#demo img{
+    width: 28%;
+}
+
+#see-more{
+    margin: 8rem 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-image: url(../img/dshape-horizontal.png);
+    background-size: 120% calc(100% - 30vh);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#see-more div{
+    margin: 1.5rem 3rem 3rem 3rem;
+}
+#see-more h2, #see-more h3{
+    font-weight: 400;
+}
+#see-more img{
+    height: 25rem;
+}
+#see-more div:first-of-type{
+    text-align: right;
+}
+
+#see-more div:first-of-type h2::before{
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    background-color: #D9D9D9;
+    background-image: url(../img/play.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    border-radius: 3rem;
+    transform: translateY(1rem) rotate(180deg);
+}
+#see-more div:last-of-type h2::after{
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+    background-color: #D9D9D9;
+    background-image: url(../img/play.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    border-radius: 3rem;
+    transform: translateY(1rem);
 }
