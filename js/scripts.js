@@ -9,4 +9,5 @@ hamButton.addEventListener('click', () => {
     shapeLogo.classList.toggle('menu-switch');
     letterLogo.classList.toggle('menu-switch');
     menu.classList.toggle('menu-switch');
+    document.body.classList.toggle('menu-switch');
 });
