@@ -55,6 +55,14 @@ nav{
     margin-right: 0.15rem;
 }
 /*logo animation*/
+#logo:hover div:first-of-type img{
+    opacity: 0;
+    transform: translateY(-200%);
+}
+#logo:hover div:last-of-type img{
+    opacity: 1;
+    transform: translateY(-100%);
+}
 #logo.menu-switch div:first-of-type img{
     opacity: 0;
     transform: translateY(-200%);

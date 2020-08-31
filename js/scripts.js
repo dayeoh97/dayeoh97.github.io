@@ -11,8 +11,8 @@ hamButton.addEventListener('click', () => {
     document.body.classList.toggle('menu-switch');
     //check if menu is present then disable scrolling
     if(menu.className === 'menu-switch'){
-        bodyScrollLock.disableBodyScroll(document.body, {reserveScrollBarGap: true,});
+        bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
     } else {
-        bodyScrollLock.enableBodyScroll(document.body);
+        bodyScrollLock.enableBodyScroll(menu);
     }
 });
