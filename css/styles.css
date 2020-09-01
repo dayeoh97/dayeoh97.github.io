@@ -235,12 +235,15 @@ footer p{
 }
 
 .header{
+    position: relative;
+    z-index: -1;
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
     margin: 0 calc(1rem + 10vw) 3rem 22%;
 }
-#missdior .header{
+.missdior .header{
+    z-index: 1;
     margin: 0 24% 0 22%;
     font-size: calc(1.7rem + 1vw);
     color: #E6CDD4;
@@ -289,15 +292,21 @@ footer p{
     height: calc(8rem + 30vw + 8vh);
     width: calc(12rem + 50vw + 12vh);
     background-size: cover;
-    background-position: left;
+    background-position: center;
 }
 .case-study:first-of-type{
-    background-image: url(../img/pr1_profile.jpg);
     float: right;
 }
 .case-study:nth-of-type(2){
-    background-image: url(../img/pr2_profile.jpg);
     text-align: right;
+}
+.case-study img{
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }
 .case-study h1{
     z-index: 1;
@@ -311,7 +320,7 @@ footer p{
     z-index: 1;
     line-height: 1.5rem;
 }
-.case-study *{
+.case-study *:not(img){
     transition-duration: 0.1s;
     transform: translateY(2rem);
     opacity: 0;
@@ -340,10 +349,10 @@ footer p{
     filter: brightness(0) saturate(100%) invert(76%) sepia(87%) saturate(351%) hue-rotate(359deg) brightness(101%) contrast(104%);
     transform-origin: right;
 }
-.case-study *, .case-study::before{
+.case-study *:not(img), .case-study::before{
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
-.case-study:hover *{
+.case-study:hover *:not(img){
     transition-duration: 0.6s;
     transform: translateY(0);
     opacity: 1;
@@ -361,13 +370,13 @@ footer p{
 }
 
 /*miss dior*/
-#missdior nav{
+.missdior nav{
     position: fixed;
 }
-#missdior #logo img{
+.missdior #logo img{
     filter: brightness(0) saturate(100%) invert(47%) sepia(80%) saturate(272%) hue-rotate(287deg) brightness(88%) contrast(91%);
 }
-#missdior #hamburger-button hr{
+.missdior #hamburger-button hr{
     background-color: #BC6886;
 }
 
@@ -503,7 +512,7 @@ footer p{
     color: #BC6886;
     line-height: 2rem;
 }
-#missdior .quote::after{
+.missdior .quote::after{
     content: "- Christian Dior";
     display: block;
     font-size: 0.8rem;
@@ -698,18 +707,18 @@ footer p{
 }
 
 /*about*/
-#about nav {
+.about nav {
     position: fixed;
 }
 
-#about .section-p{
+.about .section-p{
     font-weight: 400;
     width: 32%;
 }
-#about > h1 {
+.about > h1 {
     margin-top: 8rem;
 }
-#about > h1, #about > p{
+.about > h1, .about > p{
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -717,7 +726,7 @@ footer p{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-#about > img{
+.about > img{
     z-index: 0;
     position: absolute;
     right: 0;
@@ -725,7 +734,7 @@ footer p{
     width: calc(10rem + 25vw);
 }
 
-#about .large{
+.about .large{
     font-family: 'Radio Grotesk', sans-serif;
     font-size: 1.7rem;
 }
@@ -742,7 +751,7 @@ footer p{
 }
 
 /*archive page*/
-#archive .p-header{
+.archive .p-header{
     font-size: 1.3rem;
 }
 
@@ -767,4 +776,24 @@ footer p{
 }
 .flickity-prev-next-button.next{
     right: calc(50% - 55px)!important;
+}
+
+.case-study.hidden *:not(img), .case-study.hidden::before{
+    display: none;
+}
+
+.transition-zoom {
+    transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html.is-animating .transition-zoom {
+    z-index: 1;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
