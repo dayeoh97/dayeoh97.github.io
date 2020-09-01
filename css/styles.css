@@ -236,7 +236,7 @@ footer p{
 
 .header{
     position: relative;
-    z-index: -1;
+    z-index: 1;
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
@@ -307,6 +307,12 @@ footer p{
     width: inherit;
     height: inherit;
     object-fit: cover;
+}
+.case-study:first-of-type img{
+    right: 0;
+}
+.case-study:nth-of-type(2) img{
+    left: 0;
 }
 .case-study h1{
     z-index: 1;
@@ -787,12 +793,11 @@ footer p{
 }
 
 html.is-animating .transition-zoom {
-    z-index: 1;
+    z-index: 2;
     display: block;
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
     margin: auto;
     width: 100%;
     height: 100%;
