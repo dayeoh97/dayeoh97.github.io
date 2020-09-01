@@ -133,7 +133,7 @@ nav{
 #hamburger-button.menu-switch hr:first-of-type{
     transition-delay: 0.1s;
     width: 100%;
-    transform: translateY(-0.1rem) rotate(45deg);
+    transform: translateY(-0.05rem) rotate(45deg);
 }
 #hamburger-button.menu-switch hr:last-of-type{
     transition-delay: 0.2s;
@@ -250,16 +250,19 @@ footer p{
 }
 
 .header span{
-    cursor: pointer;
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
+}
+
+.index .header span{
+    cursor: pointer;
     color: #5522FD;
     text-decoration: underline;
     position: relative;
 }
 
-.header span::before{
+.index .header span::before{
     content: "[Thai-yeah]";
     display: inline-block;
     position: absolute;
@@ -276,7 +279,7 @@ footer p{
     transition: 0.5s cubic-bezier(.26,.57,0,1.08);
 }
 
-.header span:hover::before{
+.index .header span:hover::before{
     opacity: 1;
     top: calc(-1rem - 0.8vw);
 }
@@ -431,13 +434,13 @@ footer p{
     font-weight: 500;
     line-height: 1.75rem;
 }
-.section-p span, .section-p span a{
+.missdior .section-p span, .missdior .section-p span a{
     cursor: pointer;
     text-decoration: underline;
     color: #BC6886;
     position: relative;
 }
-.section-p:nth-of-type(2) span::before{
+.missdior .section-p:nth-of-type(2) span::before{
     content: "";
     position: absolute;
     bottom: 2.5rem;
@@ -451,7 +454,7 @@ footer p{
     height: 0;
     transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
-.section-p:nth-of-type(2) span::after{
+.missdior .section-p:nth-of-type(2) span::after{
     content: "Christian Dior ©2019";
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -464,11 +467,11 @@ footer p{
     transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.section-p:nth-of-type(2) span:hover::after{
+.missdior .section-p:nth-of-type(2) span:hover::after{
     opacity: 1;
 }
 
-.section-p:nth-of-type(2) span:hover::before{
+.missdior .section-p:nth-of-type(2) span:hover::before{
     opacity: 1;
     height: 28.125vh;
 }
@@ -664,45 +667,21 @@ footer p{
 }
 #see-more div{
     margin: 1.5rem 3rem 3rem 3rem;
+    text-align: center;
 }
 #see-more h2, #see-more h3{
     font-weight: 400;
 }
+#see-more a{
+    text-decoration: none;
+}
 #see-more img{
     height: 25rem;
 }
-#see-more div:first-of-type{
-    text-align: right;
+#see-more h3{
+    font-size: .9rem;
 }
 
-#see-more div:first-of-type h2::before{
-    content: "";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
-    background-color: #D9D9D9;
-    background-image: url(../img/play.svg);
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;
-    border-radius: 3rem;
-    transform: translateY(1rem) rotate(180deg);
-}
-#see-more div:last-of-type h2::after{
-    content: "";
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    margin-left: 1rem;
-    background-color: #D9D9D9;
-    background-image: url(../img/play.svg);
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;
-    border-radius: 3rem;
-    transform: translateY(1rem);
-}
 .wide{
     margin-left: 16%;
 }
@@ -711,6 +690,113 @@ footer p{
     font-size: 1.5rem;
     font-weight: 500;
     color: #1c1c1c;
+}
+
+/*pride-month-case-studies*/
+.pride #logo img:first-of-type{
+    filter: brightness(0) saturate(100%) invert(14%) sepia(79%) saturate(5004%) hue-rotate(2deg) brightness(88%) contrast(124%);
+}
+
+.pride #logo img:nth-of-type(2){
+    filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(1416%) hue-rotate(349deg) brightness(99%) contrast(91%);
+}
+
+.pride #logo img:nth-of-type(3){
+    filter: brightness(0) saturate(100%) invert(41%) sepia(62%) saturate(2175%) hue-rotate(119deg) brightness(97%) contrast(96%);
+}
+
+.pride #logo img:last-of-type{
+    filter: brightness(0) saturate(100%) invert(28%) sepia(98%) saturate(1419%) hue-rotate(179deg) brightness(99%) contrast(101%);
+}
+
+.pride #hamburger-button hr{
+    background-color: #007CC1;
+}
+
+.pride nav {
+    position: fixed;
+}
+
+.pride .header {
+    line-height: 3.8rem;
+    margin-bottom: 10rem;
+}
+
+.pride .section-p span, .pride .section-p span a{
+    color: #DD0000;
+    text-decoration: underline;
+    position: relative;
+}
+
+.pride .section-p span::before{
+    content: "";
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    width: 45vh;
+    background-image: url(../img/pr2_website.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0.2rem 1rem #9D9D9D;
+    opacity: 0;
+    height: 0;
+    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.pride .section-p span:hover::before{
+    opacity: 1;
+    height: 24.5vh;
+}
+
+.pride .section-p span::after{
+    content: "Visit site to learn more";
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    position: absolute;
+    bottom: 30vh;
+    left: .2rem;
+    width: 50vh;
+    opacity: 0;
+    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.pride .section-p span:hover::after{
+    opacity: 1;
+}
+
+#pride-type h6{
+    margin: 0;
+    text-transform: uppercase;
+    color: #9D9D9D;
+    font-weight: 400;
+    font-size: 0.45rem;
+}
+#pride-type {
+    margin: 0 0 0 22%;
+    padding: 1rem 1rem 1rem 2rem;
+}
+#pride-type p{
+    font-family: 'Avenir', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    margin: 0 0 1.3rem 0;
+}
+#pride-type p:last-of-type{
+    font-size: 2rem;
+}
+
+.split{
+    padding: 0 16% 8% 16%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.split img{
+    height: auto;
+    width: 45%;
+    box-shadow: -.5rem .5rem 1rem rgba(157, 157, 157, 0.64);
 }
 
 /*about*/
@@ -735,7 +821,7 @@ footer p{
     z-index: 0;
     position: absolute;
     right: 0;
-    top: calc(90px + 4rem + 2vw);
+    top: calc(90px + 2rem + 2vw);
     width: calc(10rem + 25vw);
 }
 

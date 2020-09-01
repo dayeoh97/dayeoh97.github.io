@@ -4,6 +4,13 @@ init = () => {
     const hamButton = document.querySelector('#hamburger-button');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
+    menu.querySelector("a:first-of-type").addEventListener('click', () => { 
+        menuSwitch();
+        if (cases) {
+            cases[0].scrollIntoView(true);
+            window.scrollBy(0, -100);
+        };
+    });
     menuSwitch = () => {
         hamButton.classList.toggle('menu-switch');
         logo.classList.toggle('menu-switch');
