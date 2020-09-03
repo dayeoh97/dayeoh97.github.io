@@ -444,8 +444,8 @@ footer p{
     content: "";
     position: absolute;
     bottom: 2.5rem;
-    left: 0;
-    width: 50vh;
+    left: -12vh;
+    width: calc(25vh + 5vw + 5rem);
     background-image: url(../img/pr1_originalposter.jpg);
     background-size: cover;
     background-position: center;
@@ -457,12 +457,13 @@ footer p{
 .missdior .section-p:nth-of-type(2) span::after{
     content: "Christian Dior ©2019";
     font-size: 0.8rem;
+    white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: .2rem;
     position: absolute;
-    bottom: 33vh;
-    left: .2rem;
-    width: 50vh;
+    bottom: calc(16.872vh + 3.4vw + 3.4rem);
+    left: -12vh;
+    width: 100%;
     opacity: 0;
     transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -473,7 +474,7 @@ footer p{
 
 .missdior .section-p:nth-of-type(2) span:hover::before{
     opacity: 1;
-    height: 28.125vh;
+    height: calc(14.06vh + 2.81vw + 2.81rem);
 }
 
 #fullscreen-section{
@@ -573,7 +574,7 @@ footer p{
 }
 
 #type{
-    margin: 1.8rem 5rem 10rem 22%;
+    margin: 1.8rem 0rem 10rem 22%;
     padding: 0 1.5rem;
     width: 25rem;
     display: grid;
@@ -652,7 +653,9 @@ footer p{
     justify-content: space-between;
 }
 #demo img{
+    display: inline-block;
     width: 28%;
+    align-self: flex-start;
 }
 
 #see-more{
@@ -719,7 +722,7 @@ footer p{
 
 .pride .header {
     line-height: 3.8rem;
-    margin-bottom: 10rem;
+    margin: 0 calc(1rem + 15vw) 10rem 22%;
 }
 
 .pride .section-p span, .pride .section-p span a{
@@ -732,8 +735,8 @@ footer p{
     content: "";
     position: absolute;
     bottom: 2.5rem;
-    left: 0;
-    width: 45vh;
+    left: calc(-4.5vh - 4.5vw - 6.13rem + 80%);
+    width: calc(9vh + 9vw + 12.25rem);
     background-image: url(../img/pr2_website.png);
     background-size: cover;
     background-position: center;
@@ -745,7 +748,7 @@ footer p{
 
 .pride .section-p span:hover::before{
     opacity: 1;
-    height: 24.5vh;
+    height: calc(4.9vh + 4.9vw + 6.125rem);
 }
 
 .pride .section-p span::after{
@@ -754,9 +757,9 @@ footer p{
     text-transform: uppercase;
     letter-spacing: .2rem;
     position: absolute;
-    bottom: 30vh;
-    left: .2rem;
-    width: 50vh;
+    bottom: calc(5.9vh + 5.9vw + 7.35rem);
+    left: calc(-4.5vh - 4.5vw - 5.9rem + 80%);
+    width: calc(9vh + 9vw + 12.25rem);
     opacity: 0;
     transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -764,16 +767,94 @@ footer p{
     opacity: 1;
 }
 
+#pride-shapes{
+    margin: 5rem 16% calc(5rem + 7vw + 0.5vh) 16%;
+    position: relative;
+    width: auto;
+    height: 35vw;
+}
+#pride-shapes span{
+    position: absolute;
+    width: 16vw;
+}
+#pride-shapes img{
+    display: inline-block;
+    width: 100%;
+}
+#pride-shapes span:first-of-type{
+    top: 0;
+    left: 0;
+}
+#pride-shapes span:nth-of-type(2){
+    top: 12%;
+    left: 30%;
+    width: 17vw;
+}
+#pride-shapes span:nth-of-type(3){
+    top: 8%;
+    right: 10%;
+}
+#pride-shapes span:nth-of-type(4){
+    bottom: 2%;
+    left: 17%;
+}
+#pride-shapes span:nth-of-type(5){
+    bottom: 0;
+    right: 35%;
+}
+#pride-shapes span:last-of-type{
+    bottom: 8%;
+    right: 0;
+    width: 23vw;
+}
+#pride-shapes span::after{
+    word-wrap: break-word;
+    white-space: pre;
+    position: absolute;
+    font-family: 'Radio Grotesk', sans-serif;
+    text-transform: uppercase;
+}
+#pride-shapes span:first-of-type::after{
+    content: "#FF1E00 \A #AE0000";
+    bottom: 42%;
+    left: 35%;
+}
+#pride-shapes span:nth-of-type(2)::after{
+    content: "#f7ff15 \A #fda832";
+    left: 27%;
+    top: 28%;
+}
+#pride-shapes span:nth-of-type(3)::after{
+    content: "#22b3e7 \A #003bff";
+    left: 35%;
+    top: 15%;
+}
+#pride-shapes span:nth-of-type(4)::after{
+    content: "#ff8f00 \A #ff4400";
+    bottom: 15%;
+    left: 34%;
+}
+#pride-shapes span:nth-of-type(5)::after{
+    content: "#22b3e7 \A #003bff";
+    bottom: 40%;
+    left: 37%;
+}
+#pride-shapes span:last-of-type::after{
+    content: "#d373e0 \A #611698";
+    bottom: 30%;
+    right: 15%;
+}
+
+#pride-type {
+    margin: 0 0 0 22%;
+    padding: 1rem 1rem 1rem 2rem;
+}
 #pride-type h6{
     margin: 0;
     text-transform: uppercase;
     color: #9D9D9D;
     font-weight: 400;
-    font-size: 0.45rem;
-}
-#pride-type {
-    margin: 0 0 0 22%;
-    padding: 1rem 1rem 1rem 2rem;
+    font-size: calc(0.4rem + 0.2vw);
 }
 #pride-type p{
     font-family: 'Avenir', sans-serif;
@@ -785,6 +866,120 @@ footer p{
     font-size: 2rem;
 }
 
+#pride-language{
+    margin: 4rem 30% 5rem 30%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#pride-language > *{
+    flex: 0 1 30%;
+}
+#pride-language ul{
+    list-style: none;
+    padding: 0;
+}
+#pride-language li{
+    padding: 0.5rem 3rem 0.5rem 0.7rem;
+    font-size: 1.1rem;
+}
+#pride-language ul:first-of-type li{
+    font-weight: 500;
+    color: white;
+}
+#pride-language ul:last-of-type li{
+    font-weight: 700;
+}
+#pride-language li:first-of-type{
+    padding-left: 0;
+    color: #9D9D9D!important;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+#pride-language img{
+    flex: 0 0 7.5rem;
+    width: 7.5rem;
+}
+
+#pride-modes{
+    margin: 0 22% 15% 22%;
+    display: flex;
+    flex-flow: row wrap;
+}
+#pride-modes > div:first-of-type{
+    flex: 1 1 45%;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    align-content: center;
+    justify-content: space-around;
+    margin-right: 3rem;
+}
+#pride-modes > div:first-of-type div{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    height: calc(8vw + 3rem);
+    width: calc(8vw + 3rem);
+    background-color: #D9D9D9;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+#pride-modes > div:first-of-type span{
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+}
+#pride-modes > div:last-of-type{
+    padding: 1rem 0 1rem 1rem;
+    flex: 1 1 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+#pride-modes > div:last-of-type div{
+    display: grid;
+    grid-template-columns: 4rem auto;
+    grid-column-gap: 2.5rem;
+    margin: 0 0 2rem 0;
+}
+#pride-modes > div:last-of-type div h1{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+#pride-modes > div:last-of-type div p{
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.2rem;
+}
+#pride-modes div:last-of-type div:first-of-type p span{
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+}
+#pride-modes div div:first-of-type p span::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    height: 5rem;
+    width: 5rem;
+    background-image: url(../img/pr2_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+#pride-modes div div:first-of-type p span:hover::before{
+    opacity: 1;
+    bottom: 1.5rem;
+}
+
+
 .split{
     padding: 0 16% 8% 16%;
     width: 100%;
@@ -794,6 +989,7 @@ footer p{
 }
 
 .split img{
+    align-self: flex-start;
     height: auto;
     width: 45%;
     box-shadow: -.5rem .5rem 1rem rgba(157, 157, 157, 0.64);
@@ -887,3 +1083,10 @@ html.is-animating .transition-zoom {
     width: 100%;
     height: 100%;
 }
+
+@media only screen and (max-width: 550px) {
+    #type{
+        grid-template-columns: auto;
+        width: auto;
+    }
+} 

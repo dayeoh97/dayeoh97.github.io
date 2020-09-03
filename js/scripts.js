@@ -1,9 +1,11 @@
+//initiate swup
 const swup = new Swup(); 
 
 init = () => {
     const hamButton = document.querySelector('#hamburger-button');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
+    //scroll work section into view on index
     menu.querySelector("a:first-of-type").addEventListener('click', () => { 
         menuSwitch();
         if (cases) {
@@ -11,6 +13,7 @@ init = () => {
             window.scrollBy(0, -100);
         };
     });
+    //toggle for menu
     menuSwitch = () => {
         hamButton.classList.toggle('menu-switch');
         logo.classList.toggle('menu-switch');
@@ -23,6 +26,7 @@ init = () => {
             bodyScrollLock.enableBodyScroll(menu);
         }
     };
+    //add zoom animation if case study thumbnail is clicked
     hamButton.addEventListener('click', menuSwitch);
     const cases = document.querySelectorAll('.case-study');
     if (cases) {
