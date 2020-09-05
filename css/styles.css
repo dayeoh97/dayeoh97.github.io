@@ -713,7 +713,7 @@ footer p{
 }
 
 .pride #hamburger-button hr{
-    background-color: #007CC1;
+    background-color: #DD0000;
 }
 
 .pride nav {
@@ -729,6 +729,7 @@ footer p{
     color: #DD0000;
     text-decoration: underline;
     position: relative;
+    font-weight: 700;
 }
 
 .pride .section-p span::before{
