@@ -6,13 +6,23 @@ init = () => {
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
     const cases = document.querySelectorAll('.case-study');
-    //scroll work section into view on index
+    //handle scrolling on index
     if(document.querySelector('.index')){
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
-            cases[0].scrollIntoView(true);
-            window.scrollBy(0, -100);
+            document.querySelector('#padding-square').scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         });
+        logo.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            menuSwitch();
+        })
     };
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
@@ -28,7 +38,7 @@ init = () => {
         menu.classList.toggle('menu-switch');
         document.body.classList.toggle('menu-switch');
         //check if menu is present then disable scrolling
-        if(menu.className === 'menu-switch'){
+        if(document.body.className === 'menu-switch'){
             bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
         } else {
             bodyScrollLock.enableBodyScroll(menu);
@@ -41,9 +51,15 @@ init = () => {
             study.addEventListener('click', () => {
                 study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
                 study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
-            })
-        })
+            });
+        });
     }
+    var flkty = new Flickity('.main-carousel', {
+        pageDots: false,
+        cellSelector: '.carousel-cell',
+        wrapAround: true,
+        imagesLoaded: true
+    });
 };
 
 document.addEventListener('DOMContentLoaded', init);

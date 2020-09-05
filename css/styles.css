@@ -7,6 +7,11 @@
     color: #1c1c1c;
 }
 
+::selection{
+    background: #C9BAFF;
+/*    color: white;*/
+}
+
 body{
     margin: 0;
     background-color: #FFFCF5;
@@ -241,7 +246,7 @@ footer p{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
     font-size: calc(2rem + 1.5vw);
-    margin: 0 calc(1rem + 10vw) 3rem 22%;
+    margin: 0 calc(1rem + 10vw) 8rem 22%;
 }
 .missdior .header{
     z-index: 1;
@@ -285,6 +290,12 @@ footer p{
     top: calc(-1rem - 0.8vw);
 }
 
+#padding-square{
+    width: 100%;
+    height: 5rem;
+/*    background-color: aqua;*/
+}
+
 .case-study{
     text-decoration: none;
     position: relative;
@@ -292,7 +303,7 @@ footer p{
     flex-flow: column nowrap;
     justify-content: center;
     padding: calc(1rem + 1.5vw + 0.75vh);
-    margin: calc(1.75rem + 9vw) 0 calc(1.75rem + 15vw) 0;
+    margin: 0 0 calc(1.75rem + 12vw) 0;
     height: calc(8rem + 30vw + 8vh);
     width: calc(12rem + 50vw + 12vh);
     background-size: cover;
@@ -441,6 +452,7 @@ footer p{
     text-decoration: underline;
     color: #BC6886;
     position: relative;
+    font-weight: 700;
 }
 .missdior .section-p:nth-of-type(2) span::before{
     content: "";
@@ -576,34 +588,36 @@ footer p{
 }
 
 #type{
-    margin: 1.8rem 0rem 10rem 22%;
+    margin: 1.8rem 0rem 15rem 22%;
     padding: 0 1.5rem;
-    width: 25rem;
+    width: 30rem;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
 }
 
 #type img{
-    height: 7rem;
+    height: 9rem;
     width: 100%;
     object-fit: contain;
     object-position: left;
     grid-column: 1/2;
     grid-row: 2/7;
+    transform: translateY(-.5rem);
 }
 #type h6{
     margin: 0;
     text-transform: uppercase;
     color: #9D9D9D;
     font-weight: 400;
-    font-size: 0.45rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
 }
 #type p{
-    margin: 0 0 0.7rem 0;
+    margin: 0 0 0.8rem 0;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 #type p:first-of-type{
     font-weight: 400;
@@ -673,6 +687,7 @@ footer p{
 #see-more div{
     margin: 1.5rem 3rem 3rem 3rem;
     text-align: center;
+    transition: .5s ease;
 }
 #see-more h2, #see-more h3{
     font-weight: 400;
@@ -682,6 +697,12 @@ footer p{
 }
 #see-more img{
     height: 25rem;
+    box-shadow: -.5rem .5rem 1rem rgba(157, 157, 157, 0.64);
+    transition: .5s ease;
+}
+#see-more img:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: -.5rem 1rem 1rem rgba(157, 157, 157, 0.64);
 }
 #see-more h3{
     font-size: .9rem;
@@ -740,7 +761,7 @@ footer p{
     bottom: 2.5rem;
     left: calc(-4.5vh - 4.5vw - 6.13rem + 80%);
     width: calc(9vh + 9vw + 12.25rem);
-    background-image: url(../img/pr2_website.png);
+    background-image: url(../img/pr2_website.jpg);
     background-size: cover;
     background-position: center;
     box-shadow: 0 0.2rem 1rem #9D9D9D;
@@ -857,7 +878,7 @@ footer p{
     text-transform: uppercase;
     color: #9D9D9D;
     font-weight: 400;
-    font-size: calc(0.4rem + 0.2vw);
+    font-size: 0.7rem;
 }
 #pride-type p{
     font-family: 'Avenir', sans-serif;
@@ -892,13 +913,15 @@ footer p{
 }
 #pride-language ul:last-of-type li{
     font-weight: 700;
+/*    padding-left: 0;*/
 }
 #pride-language li:first-of-type{
     padding-left: 0;
     color: #9D9D9D!important;
     text-transform: uppercase;
     font-size: 0.6rem;
-    font-weight: 400;
+    font-weight: 400!important;
+    font-size: 0.7rem;
 }
 #pride-language img{
     flex: 0 0 7.5rem;
@@ -933,7 +956,7 @@ footer p{
     font-weight: 500;
 }
 #pride-modes > div:first-of-type span{
-    margin-top: 0.3rem;
+    margin-top: 0.4rem;
     font-size: 0.8rem;
 }
 #pride-modes > div:last-of-type{
@@ -962,10 +985,11 @@ footer p{
     line-height: 1.2rem;
 }
 #pride-modes div:last-of-type div:first-of-type p span{
-    font-weight: 900;
+    font-weight: 700;
     text-decoration: underline;
     cursor: pointer;
     position: relative;
+    color: #DD0000;
 }
 #pride-modes div div:first-of-type p span::before{
     content: "";
@@ -1003,6 +1027,10 @@ footer p{
 /*about*/
 .about nav {
     position: fixed;
+}
+
+.about .header{
+    margin-bottom: 3rem;
 }
 
 .about .section-p{
@@ -1055,7 +1083,23 @@ footer p{
     height: calc(27rem + 10vw);
 }
 .flickity-button{
-    background: #D9D9D9!important;
+    background: transparent!important;
+    position: relative;
+}
+.flickity-button::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #D9D9D9;
+    border-radius: 100%;
+    transition: .5s ease;
+    left: 0;
+    transform: scale(0);
+}
+.flickity-button:hover::before{
+    transform: scale(1);
 }
 .flickity-button-icon path{
     color: #5522FD!important;
