@@ -5,14 +5,22 @@ init = () => {
     const hamButton = document.querySelector('#hamburger-button');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
+    const cases = document.querySelectorAll('.case-study');
     //scroll work section into view on index
-    menu.querySelector("a:first-of-type").addEventListener('click', () => { 
-        menuSwitch();
-        if (cases) {
+    if(document.querySelector('.index')){
+        menu.querySelector("a:first-of-type").addEventListener('click', () => { 
+            menuSwitch();
             cases[0].scrollIntoView(true);
             window.scrollBy(0, -100);
-        };
-    });
+        });
+    };
+    //check for the correct URL then scroll to element or top of screen
+    if (window.location.href.includes("#work")){
+        cases[0].scrollIntoView(true);
+        window.scrollBy(0, -100);
+    } else {
+        window.scrollTo(0, 0);
+    };
     //toggle for menu
     menuSwitch = () => {
         hamButton.classList.toggle('menu-switch');
@@ -26,18 +34,7 @@ init = () => {
             bodyScrollLock.enableBodyScroll(menu);
         }
     };
-    //add zoom animation if case study thumbnail is clicked
     hamButton.addEventListener('click', menuSwitch);
-    const cases = document.querySelectorAll('.case-study');
-    if (cases) {
-        cases.forEach(study => {
-            study.addEventListener('click', () => {
-                study.classList.add('hidden');
-                study.querySelector('img').classList.add('transition-zoom');
-            });
-        });
-    };
-    window.scrollTo(0, 0);
 };
 
 document.addEventListener('DOMContentLoaded', init);
