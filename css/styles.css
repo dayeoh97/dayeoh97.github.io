@@ -1078,24 +1078,14 @@ html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
 html.is-animating.to-missdiorhtml .transition-zoom{
     visibility: visible;
     z-index: 2;
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 html.to-pridemonthhtml.is-animating .transition-zoom-2 {
     visibility: visible;
     z-index: 2;
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 html.is-animating .transition-slide{
     transform: translateX(-9rem);

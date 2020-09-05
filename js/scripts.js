@@ -35,6 +35,14 @@ init = () => {
         }
     };
     hamButton.addEventListener('click', menuSwitch);
+    //get element's position from screen top then apply to its top property on click
+    if (cases) {
+        cases.forEach(study => {
+            study.addEventListener('click', () => {
+                study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
+            })
+        })
+    }
 };
 
 document.addEventListener('DOMContentLoaded', init);
