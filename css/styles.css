@@ -10,6 +10,7 @@
 body{
     margin: 0;
     background-color: #FFFCF5;
+    overflow-x: hidden;
 }
 
 body::before{
@@ -1078,13 +1079,11 @@ html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
 html.is-animating.to-missdiorhtml .transition-zoom{
     visibility: visible;
     z-index: 2;
-    width: 100vw;
     height: 100vh;
 }
 html.to-pridemonthhtml.is-animating .transition-zoom-2 {
     visibility: visible;
     z-index: 2;
-    width: 100vw;
     height: 100vh;
 }
 html.is-animating .transition-slide{

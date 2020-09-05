@@ -40,6 +40,7 @@ init = () => {
         cases.forEach(study => {
             study.addEventListener('click', () => {
                 study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
+                study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
             })
         })
     }
