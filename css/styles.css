@@ -10,6 +10,7 @@
 body{
     margin: 0;
     background-color: #FFFCF5;
+    overflow-x: hidden;
 }
 
 body::before{
@@ -306,6 +307,7 @@ footer p{
 .case-study img{
     z-index: -1;
     position: absolute;
+    top: 0;
     right: 0;
     width: inherit;
     height: inherit;
@@ -945,6 +947,8 @@ footer p{
     display: grid;
     grid-template-columns: 4rem auto;
     grid-column-gap: 2.5rem;
+}
+#pride-modes > div:last-of-type div:not(:last-of-type){
     margin: 0 0 2rem 0;
 }
 #pride-modes > div:last-of-type div h1{
@@ -1066,23 +1070,32 @@ footer p{
     right: calc(50% - 55px)!important;
 }
 
-.case-study.hidden *:not(img), .case-study.hidden::before{
-    display: none;
+.transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade{
+    transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
-
-.transition-zoom {
-    transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
+    visibility: hidden;
+    animation: none;
 }
-
-html.is-animating .transition-zoom {
+html.is-animating.to-missdiorhtml .transition-zoom{
+    visibility: visible;
     z-index: 2;
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+}
+html.to-pridemonthhtml.is-animating .transition-zoom-2 {
+    visibility: visible;
+    z-index: 2;
+    height: 100vh;
+}
+html.is-animating .transition-slide{
+    transform: translateX(-9rem);
+}
+html.is-animating .transition-fade{
+    opacity: 0;
+}
+
+.case-study:focus *:not(img), .case-study:focus::before {
+    display: none;
 }
 
 @media only screen and (max-width: 550px) {
