@@ -368,7 +368,7 @@ footer p{
 }
 .case-study:nth-of-type(2)::before{
     background-image: url(../img/menu-r.png);
-    right: 0;
+    right: -0.5px;
     filter: brightness(0) saturate(100%) invert(76%) sepia(87%) saturate(351%) hue-rotate(359deg) brightness(101%) contrast(104%);
     transform-origin: right;
 }
@@ -1017,7 +1017,7 @@ footer p{
     justify-content: space-between;
 }
 
-.split img{
+.split > img{
     align-self: flex-start;
     height: auto;
     width: 45%;
@@ -1075,13 +1075,34 @@ footer p{
     font-size: 1.3rem;
 }
 
+.archive .split > img{
+    box-shadow: none;
+}
+
+.muse{
+    display: inline-block;
+    width: 47%;
+    height: 47vw;
+}
+.muse .carousel-cell{
+    width: 100%;
+    height: 47vw;
+    object-fit: cover;
+}
+.muse .carousel-cell:first-of-type{
+        object-position: bottom;
+}
+.muse .carousel-cell:nth-of-type(2){
+        object-position: top;
+}
+
 .ldm{
     margin: 0rem 16% 3rem 16%;
 }
-
 .ldm .carousel-cell{
     height: calc(27rem + 10vw);
 }
+
 .flickity-button{
     background: transparent!important;
     position: relative;
@@ -1101,9 +1122,6 @@ footer p{
 .flickity-button:hover::before{
     transform: scale(1);
 }
-.flickity-button-icon path{
-    color: #5522FD!important;
-}
 .flickity-prev-next-button{
     top: calc(100% + 50px)!important;
 }
@@ -1112,6 +1130,10 @@ footer p{
 }
 .flickity-prev-next-button.next{
     right: calc(50% - 55px)!important;
+}
+.flickity-button-icon path{
+    color: #5522FD!important;
+    d: path("M72.6,91.2v-81c0-9-10.9-13.5-17.3-7.2L14.8,43.5c-4,4-4,10.4,0,14.3l40.5,40.5C61.7,104.7,72.6,100.2,72.6,91.2zM21.9,50.6l40.5-40.5v81L21.9,50.6z")!important;
 }
 
 .transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade{

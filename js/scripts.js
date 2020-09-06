@@ -53,13 +53,23 @@ init = () => {
                 study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
             });
         });
-    }
-    var flkty = new Flickity('.main-carousel', {
-        pageDots: false,
-        cellSelector: '.carousel-cell',
-        wrapAround: true,
-        imagesLoaded: true
-    });
+    };
+    //wait for content to be replaced then check for and initiate carousel
+    setTimeout(() => {
+        if (document.querySelector('.main-carousel')) {
+            var caros = document.querySelectorAll('.main-carousel');
+            caros.forEach(caro => {
+                var flkty = new Flickity( caro, {
+                    pageDots: false,
+                    cellSelector: '.carousel-cell',
+                    wrapAround: true,
+                    imagesLoaded: true
+                });
+            });
+        } else {
+            console.log('no carousel on current page');
+        };
+    }, 100);
 };
 
 document.addEventListener('DOMContentLoaded', init);
