@@ -21,8 +21,10 @@ init = () => {
                 left: 0,
                 behavior: 'smooth'
             });
-            menuSwitch();
-        })
+            if(document.body.className === 'menu-switch'){
+                menuSwitch();
+            };
+        });
     };
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
@@ -66,6 +68,19 @@ init = () => {
             });
         });
     };
+    //scroll page to top of screen if current page in menu is clicked
+    menu.querySelectorAll('a:not(:first-of-type)').forEach(menuLink => {
+        menuLink.addEventListener('click', () => {
+            if (menuLink.getAttribute("href").match(window.location.pathname)){
+                menuSwitch();
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            };
+        });
+    });
 };
 
 document.addEventListener('DOMContentLoaded', init);
