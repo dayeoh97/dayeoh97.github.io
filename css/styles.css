@@ -153,7 +153,7 @@ nav{
     top: 0;
     left: 0%;
     height: 100%;
-    width: calc(42vw + 7vh);
+    width: calc(35vw + 20vh);
     background-image: url(../img/menu.png);
     background-size: 100% 100%;
     display: flex;
@@ -168,7 +168,7 @@ nav{
 #menu a{
     align-self: flex-start;
     margin: 1rem 0 1rem 0;
-    font-size: calc(4.5rem + 1vh + 1vw);
+    font-size: calc(2.5rem + 1.5vh + 3vw);
     text-decoration: none;
     font-family: 'Radio Grotesk', sans-serif;
     opacity: 0;
@@ -1137,7 +1137,7 @@ footer p{
 }
 
 .transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade{
-    transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
     visibility: hidden;
@@ -1164,7 +1164,26 @@ html.is-animating .transition-fade{
     display: none;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
+    #menu{
+        width: 90vw;
+    }
+    .header{
+        font-size: calc(1.5rem + 1.5vw);
+        margin-left: calc(2.5rem + 1vw);
+        line-height: calc(2.5rem + 0.75vh);
+    }
+    .header span{
+        font-size: calc(1.5rem + 1.5vw);
+    }
+    .case-study{
+        float: none;
+        width: 100vw;
+        height: 50vh;
+    }
+    .case-study::before{
+        width: calc(55% + 4rem + 3vh);
+    }
     #type{
         grid-template-columns: auto;
         width: auto;

@@ -47,7 +47,7 @@ init = () => {
         }
     };
     hamButton.addEventListener('click', menuSwitch);
-    //get element's position from screen top then apply to its top property on click
+    //get viewport size and position relative to element then apply properties on click
     if (cases) {
         cases.forEach(study => {
             study.addEventListener('click', () => {
