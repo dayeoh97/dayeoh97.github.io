@@ -54,22 +54,18 @@ init = () => {
             });
         });
     };
-    //wait for content to be replaced then check for and initiate carousel
-    setTimeout(() => {
-        if (document.querySelector('.main-carousel')) {
-            var caros = document.querySelectorAll('.main-carousel');
-            caros.forEach(caro => {
-                var flkty = new Flickity( caro, {
-                    pageDots: false,
-                    cellSelector: '.carousel-cell',
-                    wrapAround: true,
-                    imagesLoaded: true
-                });
+    //check for and then initiate carousel
+    if (document.querySelector('.main-carousel')) {
+        var caros = document.querySelectorAll('.main-carousel');
+        caros.forEach(caro => {
+            var flkty = new Flickity( caro, {
+                pageDots: false,
+                cellSelector: '.carousel-cell',
+                wrapAround: true,
+                imagesLoaded: true
             });
-        } else {
-            console.log('no carousel on current page');
-        };
-    }, 100);
+        });
+    };
 };
 
 document.addEventListener('DOMContentLoaded', init);
