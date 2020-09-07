@@ -1143,12 +1143,14 @@ footer p{
 }
 
 .transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade, .transition-swipe{
-    transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
     visibility: hidden;
     transform: translateY(70%);
-    animation: none;
+}
+html.to-pridemonthhtml.is-animating .transition-zoom{
+    transform: translateY(-70%);
 }
 html.to-missdiorhtml.is-animating .transition-zoom{
     visibility: visible;
@@ -1156,7 +1158,7 @@ html.to-missdiorhtml.is-animating .transition-zoom{
     z-index: 2;
     height: 100vh;
 }
-html.to-pridemonthhtml.is-animating .transition-zoom-2 {
+html.to-pridemonthhtml.is-animating .transition-zoom-2{
     visibility: visible;
     transform: translateY(0);
     z-index: 2;
