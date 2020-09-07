@@ -3,6 +3,7 @@ const swup = new Swup();
 
 init = () => {
     const hamButton = document.querySelector('#hamburger-button');
+    const navbar = document.querySelector('nav');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
     const cases = document.querySelectorAll('.case-study');
@@ -12,7 +13,7 @@ init = () => {
                 behavior: "smooth",
                 block: "start"
         });
-    }
+    };
     if(document.querySelector('.index')){
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
@@ -41,6 +42,7 @@ init = () => {
     };
     //toggle for menu
     menuSwitch = () => {
+        navbar.classList.toggle('flatten');
         hamButton.classList.toggle('menu-switch');
         logo.classList.toggle('menu-switch');
         menu.classList.toggle('menu-switch');
@@ -60,6 +62,7 @@ init = () => {
                 study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
                 study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
                 study.classList.toggle('hidden');
+                navbar.classList.toggle('hidden');
             });
         });
     };
@@ -88,6 +91,19 @@ init = () => {
                 });
             };
         });
+    });
+    //make the navbar transparent if scroll position is less than 1 screen height
+    navScroll = () => {
+        if (document.documentElement.scrollTop > 0 || window.scrollY > 0){
+            navbar.classList.add('shadow');
+        } else {
+            navbar.classList.remove('shadow');
+        };
+    };
+    document.addEventListener('scroll', () => {
+        if (window.matchMedia('screen and (max-width:768px)').matches){
+            navScroll();
+        };
     });
 };
 
