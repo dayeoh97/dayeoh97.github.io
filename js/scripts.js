@@ -53,6 +53,7 @@ init = () => {
             study.addEventListener('click', () => {
                 study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
                 study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
+                study.classList.toggle('hidden');
             });
         });
     };
@@ -64,7 +65,8 @@ init = () => {
                 pageDots: false,
                 cellSelector: '.carousel-cell',
                 wrapAround: true,
-                imagesLoaded: true
+                imagesLoaded: true,
+                arrowShape: 'M72.6,91.2v-81c0-9-10.9-13.5-17.3-7.2L14.8,43.5c-4,4-4,10.4,0,14.3l40.5,40.5C61.7,104.7,72.6,100.2,72.6,91.2zM21.9,50.6l40.5-40.5v81L21.9,50.6z'
             });
         });
     };

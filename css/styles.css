@@ -247,6 +247,7 @@ footer p{
     font-size: calc(2rem + 1.5vw);
     margin: 0 calc(1rem + 10vw) 8rem 22%;
 }
+
 .missdior .header{
     z-index: 1;
     margin: 0 24% 0 22%;
@@ -1134,23 +1135,30 @@ footer p{
 }
 .flickity-button-icon path{
     fill: #5522FD;
-    d: path("M72.6,91.2v-81c0-9-10.9-13.5-17.3-7.2L14.8,43.5c-4,4-4,10.4,0,14.3l40.5,40.5C61.7,104.7,72.6,100.2,72.6,91.2zM21.9,50.6l40.5-40.5v81L21.9,50.6z")!important;
 }
 
-.transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade{
+.case-study.hidden *:not(img), .case-study.hidden::before {
+    transition: 0.15s linear;
+    opacity: 0;
+}
+
+.transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade, .transition-swipe{
     transition: 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
     visibility: hidden;
+    transform: translateY(70%);
     animation: none;
 }
-html.is-animating.to-missdiorhtml .transition-zoom{
+html.to-missdiorhtml.is-animating .transition-zoom{
     visibility: visible;
+    transform: translateY(0);
     z-index: 2;
     height: 100vh;
 }
 html.to-pridemonthhtml.is-animating .transition-zoom-2 {
     visibility: visible;
+    transform: translateY(0);
     z-index: 2;
     height: 100vh;
 }
@@ -1160,9 +1168,12 @@ html.is-animating .transition-slide{
 html.is-animating .transition-fade{
     opacity: 0;
 }
-
-.case-study:focus *:not(img), .case-study:focus::before {
-    display: none;
+html.is-animating .transition-swipe{
+    color: transparent;
+}
+html.to-indexhtml.is-animating .transition-swipe{
+    transform: translateY(5%) scale(0.9);
+    opacity: 0;
 }
 
 @media only screen and (max-width: 600px) {
