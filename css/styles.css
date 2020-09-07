@@ -1392,11 +1392,8 @@ html.to-indexhtml.is-animating .transition-fade-2{
         justify-content: center;
     }
     .wide-img{
-        padding-left: calc(2.5rem + 1vw);
-        padding-right: calc(2.5rem + 1vw);
-    }
-    .ticket::after{
-        bottom: 5%;
+        margin-bottom: 0;
+        padding: 0 0 8% 0;
     }
     .ticket::before{
         bottom: -20%;
@@ -1448,8 +1445,7 @@ html.to-indexhtml.is-animating .transition-fade-2{
         grid-column-gap: 1.5rem;
     }
     .split{
-        padding-left: calc(2.5rem + 1vw);
-        padding-right: calc(2.5rem + 1vw);
+        padding: 0 7% 12% 7%;
     }
     #see-more img{
         height: calc(13.5rem + 17vw);
@@ -1459,8 +1455,8 @@ html.to-indexhtml.is-animating .transition-fade-2{
         width: 50%;
     }
     .ldm{
-        margin-left: calc(2.5rem + 1vw);
-        margin-right: calc(2.5rem + 1vw);
+        margin-left: 0;
+        margin-right: 0;
     }
     .muse{
         width: 47.7%;
