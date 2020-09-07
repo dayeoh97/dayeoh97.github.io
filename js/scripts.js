@@ -7,13 +7,16 @@ init = () => {
     const menu = document.querySelector("#menu");
     const cases = document.querySelectorAll('.case-study');
     //handle scrolling on index
+    workScroll = () => {
+        document.querySelector('#padding-square').scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+        });
+    }
     if(document.querySelector('.index')){
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
-            document.querySelector('#padding-square').scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            workScroll();
         });
         logo.addEventListener('click', () => {
             window.scrollTo({
@@ -25,6 +28,9 @@ init = () => {
                 menuSwitch();
             };
         });
+        document.querySelector('#scrolldown-button').addEventListener('click', () => {
+            workScroll();
+        })
     };
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
@@ -66,7 +72,7 @@ init = () => {
                 cellSelector: '.carousel-cell',
                 wrapAround: true,
                 imagesLoaded: true,
-                arrowShape: 'M72.6,91.2v-81c0-9-10.9-13.5-17.3-7.2L14.8,43.5c-4,4-4,10.4,0,14.3l40.5,40.5C61.7,104.7,72.6,100.2,72.6,91.2zM21.9,50.6l40.5-40.5v81L21.9,50.6z'
+                arrowShape: 'M70.1,22.7v55.3L22.5,50.4L70.1,22.7 M73.3,9.4c-1.3,0-2.6,0.3-3.9,1.1L12.2,43.7c-2.6,1.5-3.9,4.1-3.9,6.7c0,2.6,1.3,5.2,3.9,6.7l57.2,33.2c1.3,0.7,2.6,1.1,3.9,1.1c4.1,0,7.8-3.3,7.8-7.8V17.2C81.1,12.6,77.4,9.4,73.3,9.4L73.3,9.4z'
             });
         });
     };
