@@ -255,11 +255,12 @@ footer p{
 }
 
 #index-landing{
-    height: calc(100vh - 9rem - 2.2vw - 2vh);
+    min-height: 38rem;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 #index-landing div{
     margin-bottom: 15vh;
@@ -330,7 +331,13 @@ footer p{
     margin: 1.5rem auto 0 auto;
     display: block;
     cursor: pointer;
+    animation: dance 0.7s ease infinite alternate both;
 }
+@keyframes dance {
+    from {transform: translateY(0)}
+    to {transform: translateY(65%)}
+}
+
 #work-header{
     margin: 0 0 0 15%;
     font-family: 'Radio Grotesk', sans-serif;
@@ -396,8 +403,8 @@ footer p{
 }
 .case-study::after{
     position: absolute;
-    top: calc(45% - 5rem);
-    font-size: 10rem;
+    top: calc(45% - 2.5rem - 2.75vw);
+    font-size: calc(5rem + 5.5vw);
     font-family: 'Radio Grotesk', sans-serif;
     color: #1C1C1C;
     -webkit-text-stroke: .15rem #1C1C1C;
@@ -406,11 +413,11 @@ footer p{
 }
 .case-study:first-of-type::after{
     content: "01";
-    left: calc(-10% - 8rem);
+    left: calc(-10% - 9vw);
 }
 .case-study:nth-of-type(2)::after{
     content: "02";
-    right: calc(-10% - 10rem);
+    right: calc(-10% - 9vw);
 }
 .case-study:hover::after{
     -webkit-text-stroke-color: #5522FD;
@@ -1236,8 +1243,11 @@ footer p{
     opacity: 0;
 }
 
-.transition-zoom, .transition-zoom-2, .transition-slide, .transition-fade, .transition-fade-2{
+.transition-zoom, .transition-zoom-2, .transition-slide{
     transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.transition-fade, .transition-fade-2{
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 html.is-animating .transition-zoom, html.is-animating .transition-zoom-2{
     opacity: 0;
@@ -1307,10 +1317,10 @@ html.to-indexhtml.is-animating .transition-fade-2{
     }
     
     #index-landing{
-        height: calc(100vh - 6rem - 2.2vw - 2vh); 
+        min-height: 25rem;
     }
     #index-landing div{
-        margin-bottom: 9vh;
+        margin-bottom: 8vh;
     }
     .header{
         font-size: calc(1.5rem + 1.5vw);

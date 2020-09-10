@@ -4,6 +4,7 @@ const swup = new Swup();
 init = () => {
     const hamButton = document.querySelector('#hamburger-button');
     const navbar = document.querySelector('nav');
+    const landingPage = document.querySelector('#index-landing');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
     const cases = document.querySelectorAll('.case-study');
@@ -31,7 +32,13 @@ init = () => {
         });
         document.querySelector('#scrolldown-button').addEventListener('click', () => {
             workScroll();
-        })
+        });
+        //use the smallest value of the viewport height to calculate landing height
+        setHeight = () => {
+            landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+        };
+        setHeight();
+        window.addEventListener('resize', setHeight);
     };
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
