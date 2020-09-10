@@ -256,6 +256,7 @@ footer p{
 
 #index-landing{
     height: calc(100vh - 9rem - 2.2vw - 2vh);
+    min-height: 38rem;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -330,7 +331,13 @@ footer p{
     margin: 1.5rem auto 0 auto;
     display: block;
     cursor: pointer;
+    animation: dance 0.7s ease infinite alternate both;
 }
+@keyframes dance {
+    from {transform: translateY(0)}
+    to {transform: translateY(65%)}
+}
+
 #work-header{
     margin: 0 0 0 15%;
     font-family: 'Radio Grotesk', sans-serif;
@@ -1308,6 +1315,7 @@ html.to-indexhtml.is-animating .transition-fade-2{
     
     #index-landing{
         height: calc(100vh - 6rem - 2.2vw - 2vh); 
+        min-height: 25rem;
     }
     #index-landing div{
         margin-bottom: 9vh;
