@@ -50,11 +50,11 @@ init = () => {
         window.addEventListener('resize', setHeight);
         //handle loading animation
         loadingAnimation = () => {
-            setTimeout(() => {logo.classList.add('menu-switch')}, 500);
-            setTimeout(() => {logo.classList.remove('menu-switch')}, 1900);
+            setTimeout(() => {logo.classList.add('menu-switch')}, 750);
+            setTimeout(() => {logo.classList.remove('menu-switch')}, 2150);
             setTimeout(() => {
                 document.body.classList.remove('loading-animation');
-            }, 2900);
+            }, 3150);
         }
         //check whether animation has been played before
         if (browserSession.getItem("loading") == 'done') {
