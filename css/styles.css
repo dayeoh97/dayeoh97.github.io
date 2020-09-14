@@ -122,6 +122,9 @@ body.loading-animation #logo{
 body.loading-animation #logo img{
     height: calc(1rem + 1.2vw);
 }
+body.loading-animation #logo div:last-of-type img:first-of-type{
+    margin-right: 0.25rem;
+}
 
 #hamburger-button{
     cursor: pointer;

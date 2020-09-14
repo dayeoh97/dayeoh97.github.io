@@ -56,7 +56,7 @@ init = () => {
             setTimeout(() => {
                 document.body.classList.remove('loading-animation');
                 bodyScrollLock.enableBodyScroll(menu);
-            }, 3150);
+            }, 3650);
         }
         //check whether animation has been played before
         if (browserSession.getItem("loading") == 'done') {
