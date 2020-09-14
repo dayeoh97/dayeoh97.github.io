@@ -50,10 +50,12 @@ init = () => {
         window.addEventListener('resize', setHeight);
         //handle loading animation
         loadingAnimation = () => {
+            bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
             setTimeout(() => {logo.classList.add('menu-switch')}, 750);
             setTimeout(() => {logo.classList.remove('menu-switch')}, 2150);
             setTimeout(() => {
                 document.body.classList.remove('loading-animation');
+                bodyScrollLock.enableBodyScroll(menu);
             }, 3150);
         }
         //check whether animation has been played before
