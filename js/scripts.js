@@ -8,7 +8,10 @@ init = () => {
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
     const cases = document.querySelectorAll('.case-study');
-    //handle scrolling on index
+    let browserSession = window.sessionStorage;
+    const currentPath = window.location.pathname;
+//index
+    //scroll work section into view
     workScroll = () => {
         document.querySelector('#padding-square').scrollIntoView({
                 behavior: "smooth",
@@ -16,6 +19,7 @@ init = () => {
         });
     };
     if(document.querySelector('.index')){
+        //scroll work into view if link in menu is clicked
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
             workScroll();
@@ -30,16 +34,43 @@ init = () => {
                 menuSwitch();
             };
         });
+        //same for index arrow
         document.querySelector('#scrolldown-button').addEventListener('click', () => {
             workScroll();
         });
         //use the smallest value of the viewport height to calculate landing height
         setHeight = () => {
-            landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+            if (window.innerWidth > window.innerHeight) {
+                landingPage.style.height = Math.min(screen.height, window.innerHeight, document.documentElement.clientHeight) - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+            } else {
+                landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+            };
         };
         setHeight();
         window.addEventListener('resize', setHeight);
+        //handle loading animation
+        loadingAnimation = () => {
+            setTimeout(() => {logo.classList.add('menu-switch')}, 500);
+            setTimeout(() => {logo.classList.remove('menu-switch')}, 1900);
+            setTimeout(() => {
+                document.body.classList.remove('loading-animation');
+            }, 2900);
+        }
+        //check whether animation has been played before
+        if (browserSession.getItem("loading") == 'done') {
+            //if index page is reloaded then play animation again, otherwise no animation
+            if (browserSession.getItem("lastURL") == '/' || browserSession.getItem("lastURL") == '/index.html') {
+                loadingAnimation();
+            } else {
+                document.body.classList.remove('loading-animation');
+            };
+        //if animation has never played before, play animation then write to sessionStorage
+        } else {
+            loadingAnimation();
+            browserSession.setItem("loading", "done");
+        };
     };
+    browserSession.setItem("lastURL", currentPath);
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
         cases[0].scrollIntoView(true);
@@ -89,7 +120,7 @@ init = () => {
     //scroll page to top of screen if current page in menu is clicked
     menu.querySelectorAll('a:not(:first-of-type)').forEach(menuLink => {
         menuLink.addEventListener('click', () => {
-            if (menuLink.getAttribute("href").match(window.location.pathname)){
+            if (menuLink.getAttribute("href").match(currentPath)){
                 menuSwitch();
                 window.scrollTo({
                     top: 0,

@@ -58,6 +58,9 @@ nav{
 }
 
 #logo{
+    left: 0;
+    top: 0;
+    position: relative;
     display: inline-block;
     margin: calc(2.2rem + 1vh) 0 calc(0.2rem + 1vh) calc(2.5rem + 1vw);
 }
@@ -99,6 +102,25 @@ nav{
 }
 #logo div img:nth-of-type(4){
     transition-delay: 0.4s;
+}
+/*loading animation*/
+body.loading-animation::before{
+    z-index: 2;
+    background-color: #FFFCF5;
+}
+body.loading-animation nav{
+    background-color: transparent;
+    box-shadow: none;
+}
+body.loading-animation #hamburger-button{
+    opacity: 0;
+}
+body.loading-animation #logo{
+    left: calc(50vw - 5.1rem - 3.4vw);
+    top: calc(50vh - 3.2rem - 1vh - 1.2vw);
+}
+body.loading-animation #logo img{
+    height: calc(1rem + 1.2vw);
 }
 
 #hamburger-button{
@@ -255,7 +277,7 @@ footer p{
 }
 
 #index-landing{
-    min-height: 38rem;
+    min-height: 32rem;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -271,7 +293,7 @@ footer p{
     z-index: 1;
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
-    font-size: calc(2rem + 1.5vw);
+    font-size: calc(1.5rem + 1.5vw + 0.5vh);
     margin: 0 calc(1rem + 10vw) 8rem 22%;
 }
 
@@ -285,7 +307,7 @@ footer p{
 .header span{
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: normal;
-    font-size: calc(2rem + 1.5vw);
+    font-size: calc(1.5rem + 1.5vw + 0.5vh);
 }
 
 .index .header span{
@@ -1295,6 +1317,9 @@ html.is-leaving .transition-fade-2{
     }
     #logo{
         margin: calc(1.2rem + 1vh) calc(2.5rem + 1vw) calc(0.2rem + 1vh) 0;
+    }
+    body.loading-animation #logo{
+        left: calc(-50vw + 4.5rem + 3.4vw);
     }
     #hamburger-button{
         margin: calc(1.2rem + 1vh) 0 0 calc(2.5rem + 1vw);
