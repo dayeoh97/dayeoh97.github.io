@@ -116,6 +116,7 @@ body.loading-animation #hamburger-button{
     opacity: 0;
 }
 body.loading-animation #logo{
+    pointer-events: none;
     left: calc(50vw - 5.1rem - 3.4vw);
     top: calc(50vh - 3.2rem - 1vh - 1.2vw);
 }
