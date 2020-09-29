@@ -13,9 +13,9 @@ init = () => {
     const currentPath = window.location.pathname;
 //index
     //scroll work section into view
-    workScroll = () => {
+    workScroll = (x) => {
         paddingSquare.scrollIntoView({
-            behavior: "smooth",
+            behavior: x,
             block: "start"
         });
     };
@@ -23,7 +23,7 @@ init = () => {
         //scroll work into view if link in menu is clicked
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
-            workScroll();
+            workScroll("smooth");
         });
         logo.addEventListener('click', () => {
             window.scrollTo({
@@ -37,7 +37,7 @@ init = () => {
         });
         //same for index arrow
         document.querySelector('#scrolldown-button').addEventListener('click', () => {
-            workScroll();
+            workScroll("smooth");
         });
         //use the smallest value of the viewport height to calculate landing height
         setHeight = () => {
@@ -75,11 +75,10 @@ init = () => {
     };
     browserSession.setItem("lastURL", currentPath);
     //check for the correct URL then scroll to element or top of screen
-    if (window.location.href.includes("#work")){
-        paddingSquare.scrollIntoView(true);
-        window.scrollBy(0, -100);
-    } else {
+    if (!window.location.href.includes("#padding-square")){
         window.scrollTo(0, 0);
+    } else {
+        workScroll("auto");
     };
     //toggle for menu
     menuSwitch = () => {
