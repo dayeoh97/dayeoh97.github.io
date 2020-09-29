@@ -7,15 +7,16 @@ init = () => {
     const landingPage = document.querySelector('#index-landing');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
+    const paddingSquare = document.querySelector('#padding-square');
     const cases = document.querySelectorAll('.case-study');
     let browserSession = window.sessionStorage;
     const currentPath = window.location.pathname;
 //index
     //scroll work section into view
     workScroll = () => {
-        document.querySelector('#padding-square').scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+        paddingSquare.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
     };
     if(document.querySelector('.index')){
@@ -75,7 +76,7 @@ init = () => {
     browserSession.setItem("lastURL", currentPath);
     //check for the correct URL then scroll to element or top of screen
     if (window.location.href.includes("#work")){
-        cases[0].scrollIntoView(true);
+        paddingSquare.scrollIntoView(true);
         window.scrollBy(0, -100);
     } else {
         window.scrollTo(0, 0);

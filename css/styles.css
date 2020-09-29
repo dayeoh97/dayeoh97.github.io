@@ -301,6 +301,8 @@ footer p{
     margin: 0 calc(1rem + 10vw) 8rem 22%;
 }
 
+.centered {margin: 0 20% 8rem 20%;}
+
 .missdior .header{
     z-index: 1;
     margin: 0 24% 0 22%;
