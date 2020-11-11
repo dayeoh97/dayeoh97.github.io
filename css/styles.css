@@ -1551,8 +1551,8 @@ html.is-leaving .transition-fade-2{
         transform: translateY(-9rem);
     }
     nav.shadow{
-        background-color: #FFFCF5;
-        box-shadow: 0 0.5rem 0.5rem rgba(193, 193, 193, 0.69);
+        background-color: var(--bg-color);
+        box-shadow: 0 0.5rem 0.5rem rgba(150, 150, 150, 0.2);
     }
     nav.hidden{
         background-color: transparent;
