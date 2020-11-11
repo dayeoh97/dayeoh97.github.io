@@ -11,6 +11,34 @@ init = () => {
     const cases = document.querySelectorAll('.case-study');
     let browserSession = window.sessionStorage;
     const currentPath = window.location.pathname;
+    let expireTime = new Date();
+    expireTime.setTime(expireTime.getTime() + 604800*1000);
+    //get desired cookie
+    getCookie = (x) =>{
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${x}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    };
+    //dark mode settings
+    //check and set a cookie for the settings mode
+    setMode = () => {
+        if (getCookie("settings") == "dark") {
+            document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else {
+            document.cookie = "settings=" + "dark" + "; expires=" + expireTime.toUTCString() +"; path=/;";
+        }
+        document.body.classList.toggle("dark");
+    }
+    document.querySelector('#menu button').addEventListener('click', setMode);
+    keepMode = () => {
+        //change mode by what is set in cookie
+        if (getCookie("settings") != undefined) {
+            document.body.classList.add(getCookie("settings"));
+        } else {
+            document.body.classList.remove('undefined');
+        }
+    };
+    keepMode();
 //index
     //scroll work section into view
     workScroll = (x) => {
