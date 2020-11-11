@@ -22,6 +22,10 @@ init = () => {
     //dark mode settings
     //check and set a cookie for the settings mode
     setMode = () => {
+        //change easing during switch
+        document.body.classList.add("toggle");
+        setTimeout(() => {document.body.classList.remove("toggle")}, 850);
+        //check if it is already in dark mode
         if (getCookie("settings") == "dark") {
             document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         } else {
