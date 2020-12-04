@@ -7,22 +7,55 @@ init = () => {
     const landingPage = document.querySelector('#index-landing');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
+    const paddingSquare = document.querySelector('#padding-square');
     const cases = document.querySelectorAll('.case-study');
     let browserSession = window.sessionStorage;
     const currentPath = window.location.pathname;
+    let expireTime = new Date();
+    expireTime.setTime(expireTime.getTime() + 604800*1000);
+    //get desired cookie
+    getCookie = (x) =>{
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${x}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    };
+    //dark mode settings
+    //check and set a cookie for the settings mode
+    setMode = () => {
+        //change easing during switch
+        document.body.classList.add("toggle");
+        setTimeout(() => {document.body.classList.remove("toggle")}, 850);
+        //check if it is already in dark mode
+        if (getCookie("settings") == "dark") {
+            document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        } else {
+            document.cookie = "settings=" + "dark" + "; expires=" + expireTime.toUTCString() +"; path=/;";
+        }
+        document.body.classList.toggle("dark");
+    }
+    document.querySelector('#menu button').addEventListener('click', setMode);
+    keepMode = () => {
+        //change mode by what is set in cookie
+        if (getCookie("settings") != undefined) {
+            document.body.classList.add(getCookie("settings"));
+        } else {
+            document.body.classList.remove('undefined');
+        }
+    };
+    keepMode();
 //index
     //scroll work section into view
-    workScroll = () => {
-        document.querySelector('#padding-square').scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+    workScroll = (x) => {
+        paddingSquare.scrollIntoView({
+            behavior: x,
+            block: "start"
         });
     };
     if(document.querySelector('.index')){
         //scroll work into view if link in menu is clicked
         menu.querySelector("a:first-of-type").addEventListener('click', () => { 
             menuSwitch();
-            workScroll();
+            workScroll("smooth");
         });
         logo.addEventListener('click', () => {
             window.scrollTo({
@@ -36,7 +69,7 @@ init = () => {
         });
         //same for index arrow
         document.querySelector('#scrolldown-button').addEventListener('click', () => {
-            workScroll();
+            workScroll("smooth");
         });
         //use the smallest value of the viewport height to calculate landing height
         setHeight = () => {
@@ -74,11 +107,10 @@ init = () => {
     };
     browserSession.setItem("lastURL", currentPath);
     //check for the correct URL then scroll to element or top of screen
-    if (window.location.href.includes("#work")){
-        cases[0].scrollIntoView(true);
-        window.scrollBy(0, -100);
-    } else {
+    if (!window.location.href.includes("#padding-square")){
         window.scrollTo(0, 0);
+    } else {
+        workScroll("auto");
     };
     //toggle for menu
     menuSwitch = () => {
@@ -88,7 +120,7 @@ init = () => {
         menu.classList.toggle('menu-switch');
         document.body.classList.toggle('menu-switch');
         //check if menu is present then disable scrolling
-        if(document.body.className === 'menu-switch'){
+        if(document.body.className.includes("menu-switch")){
             bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
         } else {
             bodyScrollLock.enableBodyScroll(menu);

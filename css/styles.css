@@ -4,7 +4,6 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-family: 'Epilogue', sans-serif;
-    color: #1c1c1c;
 }
 
 ::selection{
@@ -28,8 +27,11 @@
 */
 
 body{
+    --text-color: #1c1c1c;
+    --bg-color: #FFFCF5;
     margin: 0;
-    background-color: #FFFCF5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
@@ -106,7 +108,7 @@ nav{
 /*loading animation*/
 body.loading-animation::before{
     z-index: 2;
-    background-color: #FFFCF5;
+    background-color: var(--bg-color);
 }
 body.loading-animation nav{
     background-color: transparent;
@@ -116,6 +118,7 @@ body.loading-animation #hamburger-button{
     opacity: 0;
 }
 body.loading-animation #logo{
+    pointer-events: none;
     left: calc(50vw - 5.1rem - 3.4vw);
     top: calc(50vh - 3.2rem - 1vh - 1.2vw);
 }
@@ -205,6 +208,7 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
     transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 #menu a{
+    color: var(--text-color);
     align-self: flex-start;
     margin: 1rem 0 1rem 0;
     font-size: calc(2.5rem + 1.5vh + 3vw);
@@ -217,6 +221,21 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
 }
 #menu a:last-of-type{
     transition-delay: 0.2s;
+}
+#menu button{
+    cursor: pointer;
+    margin: 2rem 0 0 0;
+    width: 4.2rem; height: 4.2rem;
+    border: none;
+    background-image: url(../img/moon.svg);
+    background-size: 45%; background-repeat: no-repeat; background-position: center;
+    background-color: rgba(255, 255, 255, 0.34);
+    border-radius: 100%;
+    opacity: 0;
+}
+#menu button:hover{
+    transition-duration: 0.3s!important;
+    background-color: rgba(255, 255, 255, 1);
 }
 #menu::before{
     content: "";
@@ -241,6 +260,11 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
 }
 #menu.menu-switch a{
     transition-duration: 0.9s;
+    margin-left: 30%;
+    opacity: 1;
+}
+#menu.menu-switch button{
+    transition-duration: 1.2s;
     margin-left: 30%;
     opacity: 1;
 }
@@ -299,6 +323,8 @@ footer p{
     font-size: calc(1.5rem + 1.5vw + 0.5vh);
     margin: 0 calc(1rem + 10vw) 8rem 22%;
 }
+
+.centered {margin: 0 20% 8rem 20%;}
 
 .missdior .header{
     z-index: 1;
@@ -375,6 +401,7 @@ footer p{
 }
 
 .case-study{
+    color: var(--text-color);
     text-decoration: none;
     position: relative;
     display: flex;
@@ -431,8 +458,8 @@ footer p{
     top: calc(45% - 2.5rem - 2.75vw);
     font-size: calc(5rem + 5.5vw);
     font-family: 'Radio Grotesk', sans-serif;
-    color: #1C1C1C;
-    -webkit-text-stroke: .15rem #1C1C1C;
+    color: var(--text-color);
+    -webkit-text-stroke: .15rem var(--text-color);
     -webkit-text-fill-color: transparent;
     transition: .5s ease;
 }
@@ -793,6 +820,7 @@ footer p{
     font-weight: 400;
 }
 #see-more a{
+    color: var(--text-color);
     text-decoration: none;
 }
 #see-more img{
@@ -1133,7 +1161,7 @@ footer p{
 .about .header{
     margin-bottom: 3rem;
     padding: 0 1rem 1rem 0;
-    background-color: rgba(255, 252, 245, 0.9);
+    background-color: var(--bg-color);
     border-radius: 2rem;
 }
 
@@ -1523,8 +1551,8 @@ html.is-leaving .transition-fade-2{
         transform: translateY(-9rem);
     }
     nav.shadow{
-        background-color: #FFFCF5;
-        box-shadow: 0 0.5rem 0.5rem rgba(193, 193, 193, 0.69);
+        background-color: var(--bg-color);
+        box-shadow: 0 0.5rem 0.5rem rgba(150, 150, 150, 0.2);
     }
     nav.hidden{
         background-color: transparent;
@@ -1534,3 +1562,36 @@ html.is-leaving .transition-fade-2{
         box-shadow: none;
     }
 } 
+
+/*dark mode settings*/
+body.dark{
+    --text-color: #FFFCF5;
+    --bg-color: #1c1c1c;
+}
+body.dark.menu-switch::before{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+body.dark #hamburger-button::before{
+    background-color: #2c2c2c;
+}
+body.dark #menu{
+    background-image: url(../img/menu-dark.png);
+}
+body.dark #menu button{
+    filter: invert(1);
+}
+body.dark #menu::before{
+    background-color: #2c2c2c;
+}
+body.toggle #menu::before{
+    transition: 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+}
+body.dark #pride-modes > div:first-of-type div{
+    background-color: #2c2c2c;
+}
+body.dark #see-more{
+    background-image: url(../img/dshape-horizontal-dark.png);
+}
+body.dark footer a{
+    color: var(--text-color);
+}
