@@ -291,6 +291,7 @@ footer svg{
 }
 footer a{
     position: relative;
+     color: var(--text-color);
 }
 footer a::before{
     content: "Let's chat";
@@ -1591,7 +1592,4 @@ body.dark #pride-modes > div:first-of-type div{
 }
 body.dark #see-more{
     background-image: url(../img/dshape-horizontal-dark.png);
-}
-body.dark footer a{
-    color: var(--text-color);
 }
