@@ -1948,8 +1948,10 @@ body.dark #menu::before{
 body.toggle #menu::before{
     transition: 0.7s cubic-bezier(0.33, 1, 0.68, 1);
 }
-body.dark .case-study > *{
-    color: #1c1c1c;
+@media only screen and (min-width: 768px){
+    body.dark .case-study > *{
+        color: #1c1c1c;
+    }
 }
 body.dark #meijixolympics img:nth-child(2), body.dark .meiji #design-challenge h1, body.dark .y-intl #design-challenge h1, body.dark #yintl-texture img{
     filter: invert(1);
