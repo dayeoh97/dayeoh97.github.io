@@ -948,6 +948,7 @@ footer p{
 }
 #design-challenge .header{
     margin-bottom: 0;
+    margin: 0 22%;
 }
 
 .meiji #design-challenge{
@@ -1506,15 +1507,15 @@ footer p{
 
 .links{
     display: inline-block;
-    margin: 1rem 4rem 0 0;
+    margin: 1rem 1.5rem 0 0;
     font-family: 'Radio Grotesk', sans-serif;
     font-weight: bold;
     color: #5522FD;
-    padding: .5rem 2rem;
+    padding: .75rem 2rem;
     text-decoration: none;
     border-radius: 10rem;
-    border: .2rem solid #5522FD;
     transition: .5s ease;
+    background-color: #eeeeee;
 }
 .links:hover{
     background-color: #5522FD;
@@ -1954,7 +1955,7 @@ body.toggle #menu::before{
         color: #1c1c1c;
     }
 }
-body.dark #meijixolympics img:nth-child(2), body.dark .meiji #design-challenge h1, body.dark .y-intl #design-challenge h1, body.dark #yintl-texture img{
+body.dark #meijixolympics img:nth-child(2), body.dark #yintl-texture img{
     filter: invert(1);
 }
 body.dark #meijixolympics img:last-child{
@@ -1968,4 +1969,15 @@ body.dark .y-intl > img:nth-of-type(4){
 }
 body.dark #see-more{
     background-image: url(../img/dshape-horizontal-dark.png);
+}
+
+body.dark .meiji #design-challenge, body.dark .y-intl #design-challenge{
+    background-color: #222222;
+}
+body.dark .meiji #design-challenge h1{
+    color: #FFF3E4;
+}
+body.dark .y-intl #design-challenge h1{
+    color: #E0DEDB;
+    filter: drop-shadow(0 0 5rem black) drop-shadow(0 0 2rem rgba(0, 0, 0, 0.88));
 }
