@@ -440,7 +440,7 @@ footer p{
      width: 40%;
 }
 .case-study:nth-of-type(4) h1{
-     font-size: 1.85rem;
+     font-size: 1.69rem;
 }
 .case-study p{
     z-index: 1;
@@ -487,16 +487,16 @@ footer p{
     opacity: 0;
 }
 .case-study:first-of-type::before{
-    filter: brightness(0) saturate(100%) invert(53%) sepia(24%) saturate(862%) hue-rotate(287deg) brightness(88%) contrast(88%);
+    background-image: url(../img/d-shape-vertical-1.png);
 }
 .case-study:nth-of-type(2)::before{
-    filter: brightness(0) saturate(100%) invert(77%) sepia(53%) saturate(421%) hue-rotate(324deg) brightness(102%) contrast(101%);
+    background-image: url(../img/d-shape-vertical-2.png);
 }
 .case-study:nth-of-type(3)::before{
-    filter: brightness(0) saturate(100%) invert(76%) sepia(87%) saturate(351%) hue-rotate(359deg) brightness(101%) contrast(104%);
+    background-image: url(../img/d-shape-vertical-3.png);
 }
 .case-study:nth-of-type(4)::before{
-    filter: brightness(0) saturate(100%) invert(87%) sepia(5%) saturate(2382%) hue-rotate(164deg) brightness(102%) contrast(94%);
+    background-image: url(../img/d-shape-vertical-4.png);
 }
 .case-study *:not(img), .case-study::before{
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
@@ -536,7 +536,6 @@ footer p{
     left: calc(-10% - 9vw);
 }
 .case-study.right::before{
-    background-image: url(../img/menu.png);
     left: 0;
     transform-origin: left;
 }
@@ -551,7 +550,6 @@ footer p{
     right: calc(-10% - 9vw);
 }
 .case-study.left::before{
-    background-image: url(../img/menu-r.png);
     right: -0.5px;
     transform-origin: right;
 }
@@ -559,9 +557,6 @@ footer p{
 /*miss dior*/
 .missdior nav{
     position: fixed;
-}
-.missdior #logo img{
-    filter: brightness(0) saturate(100%) invert(47%) sepia(80%) saturate(272%) hue-rotate(287deg) brightness(88%) contrast(91%);
 }
 .missdior #hamburger-button hr{
     background-color: #BC6886;
@@ -915,12 +910,6 @@ footer p{
     position: fixed;
 }
 
-.meiji #logo img:first-of-type, .meiji #logo img:nth-of-type(3){
-    filter: brightness(0) saturate(100%) invert(89%) sepia(79%) saturate(1084%) hue-rotate(290deg) brightness(100%) contrast(104%);
-}
-.meiji #logo img:nth-of-type(2), .meiji #logo img:last-of-type{
-    filter: brightness(0) saturate(100%) invert(73%) sepia(46%) saturate(628%) hue-rotate(209deg) brightness(98%) contrast(106%);
-}
 .meiji #hamburger-button hr{
     background-color: #FFC192;
 }
@@ -1003,12 +992,10 @@ footer p{
 
 #meiji-colours div span:last-of-type{
     width: auto;
-    display: grid;
-    grid-template-rows: auto 6fr;
 }
-#meiji-colours div:first-child span:last-of-type{height: 17vh;}
-#meiji-colours div:nth-child(2) span:last-of-type{height: 14.5vh;}
-#meiji-colours div:last-child span:last-of-type{height: 12.5vh;}
+#meiji-colours div:first-child span:last-of-type{height: calc(17vh);}
+#meiji-colours div:nth-child(2) span:last-of-type{height: calc(14.5vh);}
+#meiji-colours div:last-child span:last-of-type{height: calc(12.5vh);}
 #meiji-colours div span:last-of-type h2{
     margin: 0;
     font-weight: 400;
@@ -1019,6 +1006,7 @@ footer p{
 #meiji-colours div:last-child span:last-of-type h2{color: #FFC192}
 
 #meiji-colours div span:last-of-type img{
+    display: block;
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -1053,22 +1041,6 @@ footer p{
     font-weight: 700;
 }
 /*pride-month-case-studies*/
-.pride #logo img:first-of-type{
-    filter: brightness(0) saturate(100%) invert(14%) sepia(79%) saturate(5004%) hue-rotate(2deg) brightness(88%) contrast(124%);
-}
-
-.pride #logo img:nth-of-type(2){
-    filter: brightness(0) saturate(100%) invert(46%) sepia(89%) saturate(1416%) hue-rotate(349deg) brightness(99%) contrast(91%);
-}
-
-.pride #logo img:nth-of-type(3){
-    filter: brightness(0) saturate(100%) invert(41%) sepia(62%) saturate(2175%) hue-rotate(119deg) brightness(97%) contrast(96%);
-}
-
-.pride #logo img:last-of-type{
-    filter: brightness(0) saturate(100%) invert(28%) sepia(98%) saturate(1419%) hue-rotate(179deg) brightness(99%) contrast(101%);
-}
-
 .pride #hamburger-button hr{
     background-color: #DD0000;
 }
@@ -1359,16 +1331,31 @@ footer p{
     box-shadow: -.5rem .5rem 1rem rgba(157, 157, 157, 0.64);
 }
 
+.pride .main-carousel {
+    margin: 0rem 16% 7rem 16%;
+}
+.pride .main-carousel img{
+    margin: 0 10px 0 0;
+    object-fit: contain;
+    width: 50%;
+    height: calc(68vw * 1.44);
+    filter: drop-shadow(0 0 0.3rem rgba(157, 157, 157, 0.64));
+    transform: scale(0.95);
+}
+
+@media only screen and (min-width: 768px){
+    .pride .main-carousel img{
+        max-height: 70vh;
+    }
+    
+    .pride .flickity-prev-next-button{
+        top: calc(100% + 15px + 1vh + 0.5vw)!important;
+    }
+}
+
 /*york intl orientation*/
 .y-intl nav{
     position: fixed;
-}
-
-.y-intl #logo img:first-of-type, .y-intl #logo img:nth-of-type(3){
-    filter: brightness(0) saturate(100%) invert(14%) sepia(97%) saturate(6152%) hue-rotate(345deg) brightness(89%) contrast(97%);
-}
-.y-intl #logo img:nth-of-type(2), .y-intl #logo img:last-of-type{
-    filter: brightness(0) saturate(100%) invert(61%) sepia(73%) saturate(411%) hue-rotate(151deg) brightness(93%) contrast(100%);
 }
 .y-intl #hamburger-button hr{
     background-color: #DD0202;
@@ -1554,10 +1541,10 @@ footer p{
     object-fit: cover;
 }
 .muse .carousel-cell:first-of-type{
-        object-position: bottom;
+    object-position: bottom;
 }
 .muse .carousel-cell:nth-of-type(2){
-        object-position: top;
+    object-position: top;
 }
 
 .ldm{
@@ -1582,13 +1569,12 @@ footer p{
     border-radius: 100%;
     transition: .5s ease;
     left: 0;
-    transform: scale(0);
+    background-color: #eeeeee;
 }
 .flickity-button:hover::before{
-    transform: scale(1);
     background: #5522FD;
 }
-.flickity-prev-next-button{
+.archive .flickity-prev-next-button{
     top: calc(100% + 25px + 1vh + 0.5vw)!important;
 }
 .flickity-prev-next-button.previous{
@@ -1729,6 +1715,9 @@ html.is-leaving .transition-fade-2{
         bottom: -5.5rem; left: 0; right: 0;
         text-align: center;
     }
+    .case-study:nth-of-type(4) h1{
+         font-size: 2rem;
+    }
     
     #project-title, #project-info, .section-header, .section-p, .p-header{
         margin-left: calc(2.5rem + 1vw);
@@ -1808,6 +1797,10 @@ html.is-leaving .transition-fade-2{
     #meiji-colours{
         margin: 5% 5% 7rem 5%;
     }
+    #meiji-colours div span:last-of-type h2{
+        font-size: 1rem;
+        transform: translateY(65%);
+    }
     #pride-shapes{
         margin-right: 7%;
         margin-left: 7%;
@@ -1856,6 +1849,16 @@ html.is-leaving .transition-fade-2{
     }
     .split{
         padding: 0 7% 12% 7%;
+    }
+    .pride .main-carousel {
+        margin: 0rem calc(2.5rem + 1vw) 7rem calc(2.5rem + 1vw);
+    }
+    .pride .main-carousel img{
+        width: 100%;
+        height: calc((98vw - 5rem) * 1.44);
+    }
+    .pride .flickity-prev-next-button{
+        top: calc(100% + 25px + 1vh + 0.5vw)!important;
     }
     #see-more img{
         height: calc(13.5rem + 17vw);
@@ -1980,4 +1983,12 @@ body.dark .meiji #design-challenge h1{
 body.dark .y-intl #design-challenge h1{
     color: #E0DEDB;
     filter: drop-shadow(0 0 5rem black) drop-shadow(0 0 2rem rgba(0, 0, 0, 0.88));
+}
+
+body.dark .links, body.dark .flickity-button:before{
+    background-color: #000000;
+    color: #d9d9d9;
+}
+body.dark .links:hover, body.dark .flickity-button:hover:before{
+    background-color: #5522FD;
 }
