@@ -967,12 +967,11 @@ footer p{
     display: flex;
     width: auto; height: auto;
     flex-flow: row nowrap;
-    margin: 4.5vh 0 0 0;
     align-items: flex-end;
 }
-#meiji-colours div:nth-of-type(2){
-    margin-top: 2.5vh;
-}
+#meiji-colours div:nth-of-type(1){margin-top: 4vh;}
+#meiji-colours div:nth-of-type(2){margin-top: 4vh;}
+#meiji-colours div:nth-of-type(3){margin-top: 7vh;}
 #meiji-colours div span:first-of-type{
     margin: 0 1.75vw 0 0;
     flex: 1 0 7vh;
