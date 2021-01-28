@@ -120,7 +120,7 @@ init = () => {
         menu.classList.toggle('menu-switch');
         document.body.classList.toggle('menu-switch');
         //check if menu is present then disable scrolling
-        if(document.body.className.includes("menu-switch")){
+        if(document.body.className.includes("menu-switch") && document.querySelector('#menu').className.includes('switch')){
             bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
         } else {
             bodyScrollLock.enableBodyScroll(menu);
@@ -184,7 +184,9 @@ swup.on('contentReplaced', init);
 
 unload = () => {
     document.body.classList.remove('menu-switch');
-    bodyScrollLock.enableBodyScroll(menu);
+    if(!document.body.className.includes("menu-switch")){
+        bodyScrollLock.enableBodyScroll(menu);
+    }
 }
 swup.on('willReplaceContent', unload);
 
