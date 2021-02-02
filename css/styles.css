@@ -52,6 +52,27 @@ body.menu-switch::before{
     background-color: rgba(255, 252, 245, 0.8);
 }
 
+#loading{
+    z-index: 10;
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0; margin: auto;
+    width: calc(3rem + 1vw); height: calc(3rem + 1vw);
+    background-image: url(../img/loading.svg);
+    filter: drop-shadow(0 0 1rem #5522FD);
+    animation: loading 0.7s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+    opacity: 0;
+    transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+@keyframes loading{
+    0% {transform: rotate(0)}
+    100% {transform: rotate(360deg)}
+}
+
+html.is-animating #loading{
+    transition-duration: 0.7s;
+    opacity: 1!important;
+}
+
 nav{
     z-index: 2;
     position: sticky;
