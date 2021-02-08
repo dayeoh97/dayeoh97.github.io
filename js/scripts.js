@@ -73,11 +73,15 @@ init = () => {
         });
         //use the smallest value of the viewport height to calculate landing height
         setHeight = () => {
-            if (window.innerWidth > window.innerHeight) {
-                landingPage.style.height = Math.min(screen.height, window.innerHeight, document.documentElement.clientHeight) - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+                if (!window.matchMedia('screen and (max-width:756px)').matches){
+                if (window.innerWidth > window.innerHeight) {
+                    landingPage.style.height = Math.min(screen.height, window.innerHeight, document.documentElement.clientHeight) - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+                } else {
+                    landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
+                };
             } else {
-                landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
-            };
+                landingPage.style.height = '';
+            }
         };
         setHeight();
         window.addEventListener('resize', setHeight);

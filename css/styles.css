@@ -173,8 +173,10 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
     transform: scale(0);
     transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
+@media (hover: hover) and (pointer: fine){
 #hamburger-button:hover::before{
     transform: scale(1);
+}
 }
 #hamburger-button:focus{
     outline: none;
@@ -291,7 +293,7 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
 }
 
 footer{
-    padding: calc(1rem + 5vw) calc(2rem + 7vw);
+    padding: calc(2rem + 7vw) calc(2rem + 7vw);
 }
 footer h2{
     font-family: 'Radio Grotesk', sans-serif;
@@ -445,6 +447,9 @@ footer p{
     height: inherit;
     object-fit: cover;
 }
+.case-study:nth-of-type(2) img{
+    object-position: 45% 40%;
+}
 .case-study h2{
     margin: 0 0 0.2rem 0;
     font-size: 0.8rem;
@@ -539,7 +544,7 @@ footer p{
     }
     .case-study:hover::before{
         transition-duration: 0.7s;
-        opacity: 0.8;
+        opacity: 1;
         transform: scale(1);
     }
     .case-study:hover::after{
@@ -624,7 +629,7 @@ footer p{
 .section-p{
     margin: 0 5rem 1rem 22%;
     width: 40%;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.75rem;
 }
 .sub-p{
@@ -876,7 +881,7 @@ footer p{
 #see-more{
     margin: 8rem 0 0 0;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     background-image: url(../img/dshape-horizontal.png);
     background-size: 120% calc(100% - 30vh);
@@ -933,6 +938,10 @@ footer p{
 
 .meiji #hamburger-button hr{
     background-color: #FFC192;
+}
+
+.meiji .banner-img{
+    object-position: 45% 40%;
 }
 
 #meijixolympics{
@@ -1536,42 +1545,34 @@ footer p{
 .archive .p-header{
     font-size: 1.3rem;
 }
-.archive .split:first-of-type{
-    padding-bottom: 0.75rem;
-}
-.archive .split:last-of-type{
-    margin-bottom: 5rem;
-}
-.archive .split h4{
-    margin: 0;
-    width: 47%;
-}
-.archive .split > img{
-    box-shadow: none;
+.archive .wide-img{
+    margin-bottom: 3rem;
 }
 
-.muse{
-    display: inline-block;
-    width: 47%;
-    height: 47vw;
+.giph, .giph-2{
+    width: auto;
+    padding-top: 47%;
+    margin: 0 16% 3rem 16%;
+    background-size: cover; background-position: center;
 }
-.muse .carousel-cell{
-    width: 100%;
-    height: 47vw;
-    object-fit: cover;
+.giph{
+    background-image: url(../img/archive/white-on-black.jpg);
+    animation: giph 2s steps(1, end) infinite;
 }
-.muse .carousel-cell:first-of-type{
-    object-position: bottom;
-}
-.muse .carousel-cell:nth-of-type(2){
-    object-position: top;
+.giph-2{
+    background-image: url(../img/archive/natural01.jpg);
+    animation: giph-2 2s steps(1, end) infinite;
 }
 
-.ldm{
-    margin: 0rem 16% 3rem 16%;
+@keyframes giph {
+    0% {background-image: url(../img/archive/white-on-black.jpg)}
+    50% {background-image: url(../img/archive/black-on-white.jpg)}
+    100% {background-image: url(../img/archive/white-on-black.jpg)}
 }
-.ldm .carousel-cell{
-    height: calc(27rem + 10vw);
+@keyframes giph-2 {
+    0% {background-image: url(../img/archive/natural01.jpg)}
+    50% {background-image: url(../img/archive/natural02.jpg)}
+    100% {background-image: url(../img/archive/natural01.jpg)}
 }
 
 .flickity-button{
@@ -1681,8 +1682,11 @@ html.is-leaving .transition-fade-2{
         transform-origin: calc(3rem + 1vw) calc(1rem + 1.5vh);
     }
     
+    footer{
+       padding: calc(2.5rem + 1vw);
+    }
     footer h2{
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
     footer div{
         flex-flow: column;
@@ -1693,25 +1697,35 @@ html.is-leaving .transition-fade-2{
     }
     
     #index-landing{
-        min-height: 25rem;
+        height: auto;
+        min-height: 15rem;
+        justify-content: center;
     }
     #index-landing div{
-        margin-bottom: 8vh;
+        margin: 8vh 0 0 0;
+        opacity: 0; user-select: none; pointer-events: none;
     }
-    .header{
-        font-size: calc(1.5rem + 1.5vw);
-        margin-left: calc(2.5rem + 1vw);
+    .header:not(.about .header){
+        font-size: calc(1.2rem + 0.1vw);
         margin-bottom: 0;
-        line-height: calc(2.5rem + 0.75vh);
+        line-height: calc(1.7rem + 0.75vh);
     }
     .header span{
-        font-size: calc(1.5rem + 1.5vw);
+        font-size: calc(1.2rem + 0.1vw);
+    }
+    #index-landing h1{
+        text-align: center;
+    }
+    #work-header{
+        margin: 0;
+        text-align: center;
     }
     .index > .guide-text{
-        margin-bottom: 10vh;
+        text-align: center;
+        margin: 0.5rem 0 10vh 0;
     }
     #padding-square{
-        height: 8rem;
+        height: 0;
     }
     .case-study{
         float: none;
@@ -1757,15 +1771,39 @@ html.is-leaving .transition-fade-2{
     #project-info span{
         margin-bottom: 1rem;
     }
+    .banner-img{
+        animation: span-img 40s linear alternate 1s infinite;
+    }
+    .meiji .banner-img{
+        animation: span-meiji 40s linear alternate 1s infinite;
+    }
+    @keyframes span-img {
+        0% {object-position: center;}
+        25% {object-position: 100% 0;}
+        50% {object-position: center}
+        75% {object-position: 0 0;}
+        100% {object-position: center;}
+    }
+    @keyframes span-meiji {
+        0% {object-position: 45% 40%;}
+        25% {object-position: 100% 40%;}
+        50% {object-position: 45% 40%;}
+        75% {object-position: 0 40%;}
+        100% {object-position: 45% 40%;;}
+    }
     .missdior .header, .pride .header{
-        font-size: calc(1rem + 1.5vh + 1vw);
+        font-size: calc(1.2rem + 0.1vw);
         margin-left: calc(2.5rem + 1vw);
         margin-right: calc(2.5rem + 1vw);
-        line-height: calc(2.5rem + 0.75vh);
+        line-height: calc(1.4rem + 0.75vh);
+    }
+    .pride .header{
+        margin-bottom: 5rem;
     }
     #fullscreen-section{
+        margin: 6rem 0;
         padding: calc(25% + 2vh) 0;
-        height: 130vh;
+        height: 90vh;
     }
     #fullscreen-section::after{
         background-size: 90%;
@@ -1784,8 +1822,7 @@ html.is-leaving .transition-fade-2{
         margin: 1rem;
     }
     #type{
-        margin-right: 20%;
-        margin-left: 20%;
+        margin: 6rem 20%;
         padding: 0;
         grid-template-columns: auto;
         width: auto;
@@ -1800,6 +1837,13 @@ html.is-leaving .transition-fade-2{
     }
     .ticket::before{
         bottom: -20%;
+    }
+    .meiji .ruled{
+        margin-top: 6rem;
+    }
+    .meiji #design-challenge ul{
+        margin-bottom: 12vh;
+        height: 3rem;
     }
     #meijixolympics{
         margin: 4rem calc(2.5rem + 1vw);
@@ -1824,7 +1868,33 @@ html.is-leaving .transition-fade-2{
     #pride-shapes{
         margin-right: 7%;
         margin-left: 7%;
-        height: 50vw;
+        height: 70vw;
+    }
+    #pride-shapes span::after{
+        margin: auto;
+        bottom: -100%!important;
+        top: 100%!important;
+        left: 0!important; right: 00!important;
+    }
+    #pride-shapes span:first-of-type{
+        left: 5%;
+    }
+    #pride-shapes span:nth-of-type(2){
+        top: 10.5%;
+        left: 38%;
+    }
+    #pride-shapes span:nth-of-type(3){
+        top: 6%;
+    }
+    #pride-shapes span:nth-of-type(5){
+        left: 40%;
+        bottom: 2%;
+    }
+    #pride-shapes span:nth-of-type(4){
+        left: 5%;
+    }
+    #pride-shapes span:nth-of-type(6){
+        bottom: 2%;
     }
     #pride-type{
         margin-right: 16%;
@@ -1880,8 +1950,32 @@ html.is-leaving .transition-fade-2{
     .pride .flickity-prev-next-button{
         top: calc(100% + 25px + 1vh + 0.5vw)!important;
     }
+    #see-more{
+        padding: 1rem 2rem;
+        background-size: 120% 50%;
+    }
+    #see-more a{
+        flex-basis: 50%;
+    }
+    #see-more div{
+        margin: 0.5rem 0;
+    }
     #see-more img{
-        height: calc(13.5rem + 17vw);
+        height: calc(8rem + 3vw);
+    }
+    #see-more h2{
+        font-size: 1.1rem;
+    }
+    #see-more h3{
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    #design-challenge{
+        margin: 0 0 10vh 0;
+        padding-bottom: 12vh!important;
+    }
+    #design-challenge .header{
+        margin: 0 calc(2.5rem + 1vw);
     }
     .y-intl #design-challenge{
         background-size: 70%, 70%;
@@ -1889,6 +1983,7 @@ html.is-leaving .transition-fade-2{
     }
     #yintl-texture{
         flex-flow: column;
+        margin-bottom: 6rem;
     }
     #yintl-texture > *{
         width: 100%!important;
@@ -1918,12 +2013,16 @@ html.is-leaving .transition-fade-2{
     .muse .carousel-cell{
         height: auto;
     }
-    
+    .about .header{
+        margin-left: calc(2.5rem + 1vw);
+        margin-right: calc(2.5rem + 1vw);
+        margin-bottom: 2rem;
+    }
     .about > img{
         position: static;
         width: 85%;
         float: right;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
     .about .section-p{
         width: auto;
@@ -1966,6 +2065,8 @@ body.dark #menu{
 }
 body.dark #menu button{
     filter: invert(1);
+    background-image: url(../img/sun.svg);
+    background-size: 57%;
 }
 body.dark #menu::before{
     background-color: #2c2c2c;
