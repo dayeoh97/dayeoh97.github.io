@@ -879,7 +879,7 @@ footer p{
 }
 
 #see-more{
-    margin: 8rem 0 0 0;
+    margin: 3rem 0 0 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -1546,18 +1546,18 @@ footer p{
     font-size: 1.3rem;
 }
 .archive .wide-img{
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
 }
 
 .giph, .giph-2{
     width: auto;
     padding-top: 47%;
-    margin: 0 16% 3rem 16%;
+    margin: 0 16% 6rem 16%;
     background-size: cover; background-position: center;
 }
 .giph{
     background-image: url(../img/archive/white-on-black.jpg);
-    animation: giph 2s steps(1, end) infinite;
+/*    animation: giph 2s steps(1, end) infinite;*/
 }
 .giph-2{
     background-image: url(../img/archive/natural01.jpg);
@@ -1668,13 +1668,13 @@ html.is-leaving .transition-fade-2{
         transition: 0.15s cubic-bezier(0.25, 1, 0.5, 1);
     }
     #logo{
-        margin: calc(1.2rem + 1vh) calc(2.5rem + 1vw) calc(0.2rem + 1vh) 0;
+        margin: calc(1.2rem + 1vh) calc(1.5rem + 1vw) calc(0.2rem + 1vh) 0;
     }
     body.loading-animation #logo{
         left: calc(-50vw + 4.5rem + 3.4vw);
     }
     #hamburger-button{
-        margin: calc(1.2rem + 1vh) 0 0 calc(2.5rem + 1vw);
+        margin: calc(1.2rem + 1vh) 0 0 calc(1.5rem + 1vw);
         display: inline-block;
     }
     #menu{
@@ -1706,12 +1706,15 @@ html.is-leaving .transition-fade-2{
         opacity: 0; user-select: none; pointer-events: none;
     }
     .header:not(.about .header){
-        font-size: calc(1.2rem + 0.1vw);
+        font-size: calc(1.4rem + 0.1vw);
         margin-bottom: 0;
-        line-height: calc(1.7rem + 0.75vh);
+        line-height: calc(1.5rem + 0.75vh);
+    }
+    .header.centered{
+        margin: 0 15% 8rem 15%;
     }
     .header span{
-        font-size: calc(1.2rem + 0.1vw);
+        font-size: calc(1.4rem + 0.1vw);
     }
     #index-landing h1{
         text-align: center;
@@ -1754,8 +1757,8 @@ html.is-leaving .transition-fade-2{
     }
     
     #project-title, #project-info, .section-header, .section-p, .p-header{
-        margin-left: calc(2.5rem + 1vw);
-        margin-right: calc(2.5rem + 1vw);
+        margin-left: calc(1.5rem + 1vw);
+        margin-right: calc(1.5rem + 1vw);
         width: auto;
     }
     .sub-p{
@@ -1793,12 +1796,12 @@ html.is-leaving .transition-fade-2{
     }
     .missdior .header, .pride .header{
         font-size: calc(1.2rem + 0.1vw);
-        margin-left: calc(2.5rem + 1vw);
-        margin-right: calc(2.5rem + 1vw);
+        margin-left: calc(1.5rem + 1vw);
+        margin-right: calc(1.5rem + 1vw);
         line-height: calc(1.4rem + 0.75vh);
     }
     .pride .header{
-        margin-bottom: 5rem;
+        margin-bottom: 5rem!important;
     }
     #fullscreen-section{
         margin: 6rem 0;
@@ -1975,7 +1978,7 @@ html.is-leaving .transition-fade-2{
         padding-bottom: 12vh!important;
     }
     #design-challenge .header{
-        margin: 0 calc(2.5rem + 1vw);
+        margin: 0 calc(1.5rem + 1vw);
     }
     .y-intl #design-challenge{
         background-size: 70%, 70%;
@@ -1999,19 +2002,20 @@ html.is-leaving .transition-fade-2{
         align-self: center;
         width: 75%!important;
     }
+    .y-intl .split p{
+        margin-left: calc(1.5rem + 1vw);
+        margin-right: calc(1.5rem + 1vw);
+    }
     .archive .split > img{
         width: 50%;
     }
-    .ldm{
-        margin-left: 0;
-        margin-right: 0;
+    .archive .wide-img{
+        margin-bottom: 2.5rem;
     }
-    .muse{
-        width: 47.7%;
-        height: auto;
-    }
-    .muse .carousel-cell{
-        height: auto;
+    .giph, .giph-2{
+        width: auto;
+        padding-top: 71.4%;
+        margin: 0 0 6rem 0;
     }
     .about .header{
         margin-left: calc(2.5rem + 1vw);
