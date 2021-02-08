@@ -327,6 +327,19 @@ footer p{
     margin: 0;
 }
 
+footer{
+    padding-bottom: calc(1rem + 3.5vw);
+}
+.index footer{
+    padding-top: 0;
+}
+.archive footer{
+    padding-top: 2rem;
+}
+.about footer{
+    padding-top: 5rem;
+}
+
 #index-landing{
     min-height: 32rem;
     width: 100%;
@@ -1546,7 +1559,7 @@ footer p{
     font-size: 1.3rem;
 }
 .archive .wide-img{
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
 }
 
 .giph, .giph-2{
@@ -1671,7 +1684,7 @@ html.is-leaving .transition-fade-2{
         margin: calc(1.2rem + 1vh) calc(1.5rem + 1vw) calc(0.2rem + 1vh) 0;
     }
     body.loading-animation #logo{
-        left: calc(-50vw + 4.5rem + 3.4vw);
+        left: calc(-53vw + 4.5rem + 3.4vw);
     }
     #hamburger-button{
         margin: calc(1.2rem + 1vh) 0 0 calc(1.5rem + 1vw);
