@@ -187,7 +187,7 @@ init = () => {
         if (document.querySelector('.eutm')){
             let flowVideos = document.querySelectorAll('video');
             flowVideos.forEach(flowVideo => {
-                if (contentBounds(flowVideo, 1, 1)){
+                if (contentBounds(flowVideo, 3.5, 2)){
                     flowVideo.pause();
                     flowVideo.controls = false;
                     flowVideo.loop = false;

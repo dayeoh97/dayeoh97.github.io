@@ -1924,6 +1924,9 @@ html.is-leaving .transition-fade-2{
     .case-study:nth-of-type(4) h1{
          font-size: 2rem;
     }
+    .case-study:last-of-type{
+        margin-bottom: 20vh;
+    }
     
     #project-title, #project-info, .section-header, .section-p, .p-header, #eutm-grid{
         margin-left: calc(1.5rem + 1vw);
@@ -2316,6 +2319,7 @@ body.dark .persona{
 }
 body.dark .flickity-page-dots .dot{background: #ddd!important;}
 body.dark #eutm-grid{filter: invert(1);}
+body.dark .eutm .wide-img{filter: grayscale(1) invert(1);}
 
 body.dark .meiji #design-challenge, body.dark .y-intl #design-challenge{
     background-color: #222222;
