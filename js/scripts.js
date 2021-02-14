@@ -147,7 +147,6 @@ init = () => {
         var caros = document.querySelectorAll('.main-carousel');
         caros.forEach(caro => {
             var flkty = new Flickity( caro, {
-                pageDots: false,
                 cellSelector: '.carousel-cell',
                 wrapAround: true,
                 imagesLoaded: true,
@@ -181,6 +180,38 @@ init = () => {
             navScroll();
         };
     });
+    contentBounds = (x, y, z) => {
+        return ((x.getBoundingClientRect().top >= (window.innerHeight/y || document.documentElement.clientHeight/y) && x.getBoundingClientRect().bottom > 0) || ((x.getBoundingClientRect().bottom <= window.innerHeight/z) && x.getBoundingClientRect().top < 0))
+    }
+    eutmScroll = () => {
+        if (document.querySelector('.eutm')){
+            let flowVideos = document.querySelectorAll('video');
+            flowVideos.forEach(flowVideo => {
+                if (contentBounds(flowVideo, 1, 1)){
+                    flowVideo.pause();
+                    flowVideo.controls = false;
+                    flowVideo.loop = false;
+                } else {
+                    flowVideo.play();
+                    flowVideo.controls = true;
+                    flowVideo.loop = true;
+                }
+            })
+            let orangeBlocks = document.querySelectorAll('.orange-block');
+            if (!window.matchMedia('screen and (max-width:756px)').matches){
+                if (!contentBounds(orangeBlocks[0], 6.5, 7) || !contentBounds(orangeBlocks[1], 6.5, 7)){
+                    navbar.classList.add('lighten');
+                } else {
+                    if (document.querySelector('.lighten')){
+                        navbar.classList.remove('lighten');
+                    }
+                }
+            }
+        }
+    }
+    window.addEventListener('scroll', () => {
+        eutmScroll();
+    })
 };
 
 document.addEventListener('DOMContentLoaded', init);
@@ -188,9 +219,7 @@ swup.on('contentReplaced', init);
 
 unload = () => {
     document.body.classList.remove('menu-switch');
-    if(!document.body.className.includes("menu-switch")){
-        bodyScrollLock.enableBodyScroll(menu);
-    }
+    bodyScrollLock.enableBodyScroll(menu);
 }
 swup.on('willReplaceContent', unload);
 
