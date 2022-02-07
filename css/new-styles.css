@@ -75,6 +75,10 @@ img.rounded-card{
     margin: 0;
     padding: 3rem 2rem;
     background-color: white;
+    line-height: 180%;
+}
+.exex .disclaimer{
+    background-color: #eeeeee;
 }
 
 /* Miss Dior styles */
