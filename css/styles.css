@@ -78,7 +78,7 @@ nav{
     z-index: 2;
     position: sticky;
     top: 0;
-    margin-bottom: calc(4rem + 2vw);
+    /* margin-bottom: calc(4rem + 2vw); */
 }
 
 #logo{
@@ -333,11 +333,14 @@ footer p{
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     transition: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    position: relative;
 }
 #index-landing div{
-    margin-bottom: 15vh;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    margin: 0 auto;
 }
 
 .header{
@@ -352,6 +355,11 @@ footer p{
 .centered {
     margin: 0 15% 8rem 15%;
     text-align: center;
+}
+@media only screen and (max-width: 1440) {
+    .centered {
+        margin: 0 15% 8rem 15%;
+    }
 }
 
 .missdior .header{
@@ -453,6 +461,9 @@ footer p{
 }
 /* .case-study:nth-of-type(2) img{
     object-position: 45% 40%;
+} */
+/* .case-study:nth-of-type(4) img{
+    object-position: bottom;
 } */
 .case-study h2{
     margin: 0 0 0.2rem 0;
@@ -937,9 +948,9 @@ footer p{
     background-color: #FFC192;
 }
 
-.meiji .banner-img{
-    /* object-position: 45% 40%; */
-}
+/* .meiji .banner-img{
+    object-position: 45% 40%;
+} */
 
 #meijixolympics{
     display: flex;
@@ -1387,7 +1398,7 @@ footer p{
 .eutm nav{
     position: fixed;
 }
-.eutm nav.lighten #logo, .eutm nav.lighten #hamburger-button{filter: brightness(0) invert(1);}
+.eutm nav.lighten #logo, .eutm nav.lighten #hamburger-button, .murchies nav.lighten #logo, .murchies nav.lighten #hamburger-button{filter: brightness(0) invert(1);}
 body.menu-switch nav.lighten #logo, body.menu-switch nav.lighten #hamburger-button{filter: none;}
 .eutm #hamburger-button hr{
     background-color: #FC7634;
@@ -1815,11 +1826,14 @@ html.is-animating .transition-zoom, html.is-animating .transition-zoom-2, html.i
 html.to-murchieshtml.is-animating .transition-zoom, html.to-missdiorhtml.is-animating .transition-zoom-2, html.to-eutravelmate.is-animating .transition-zoom-4{
     transform: translateY(-70%);
 }
-html.to-expexchtml.is-animating .transition-zoom, html.to-missdiorhtml.is-animating .transition-zoom-3,  html.to-eutravelmatehtml.is-animating .transition-zoom-5, html.to-murchieshtml.is-animating .transition-zoom-2, html.to-meijihtml.is-animating .transition-zoom-4{
+html.to-expexchtml.is-animating .transition-zoom, html.to-missdiorhtml.is-animating .transition-zoom-3,  html.to-eutravelmatehtml.is-animating .transition-zoom-5, html.to-murchieshtml.is-animating .transition-zoom-2{
     opacity: 1;
     transform: translateY(0);
     z-index: 2;
     height: 100vh;
+}
+html.to-meijihtml.is-animating main{
+    opacity: 0;
 }
 html.is-animating .transition-slide{
     transform: translateX(-9rem);
@@ -1881,6 +1895,7 @@ html.is-leaving .transition-fade-2{
         justify-content: center;
     }
     #index-landing div{
+        position: static;
         margin: 8vh 0 0 0;
         opacity: 0; user-select: none; pointer-events: none;
     }

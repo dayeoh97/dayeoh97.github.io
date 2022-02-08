@@ -73,12 +73,12 @@ img.rounded-card{
 }
 .disclaimer{
     margin: 0;
-    padding: 3rem 2rem;
-    background-color: white;
+    padding: 0;
+    /* background-color: white; */
     line-height: 180%;
 }
-.exex .disclaimer{
-    background-color: #eeeeee;
+.meiji .disclaimer{
+    padding: 3rem;
 }
 
 /* Miss Dior styles */
@@ -88,10 +88,10 @@ img.rounded-card{
 
 .mdior-section-1 h2{
     margin: 0;
-    padding: 3rem;
+    padding: 3rem 12%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 50px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     line-height: 145%;
     color: #E6CDD4;
@@ -233,6 +233,7 @@ img.rounded-card{
 }
 .mdior-section-3 p{
     font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
     font-size: 50px;
     line-height: 145%;
 }
@@ -397,8 +398,21 @@ img.rounded-card{
 }
 
 /* Meiji style */
+.meiji {
+    background-color: white;
+}
+body.dark .meiji{
+    background-color: #1c1c1c;
+}
 .meiji nav{
     position: fixed;
+}
+.meiji .banner-img{
+    height: auto;
+    margin-bottom: -15%;
+}
+.meiji .work-overview{
+    margin-bottom: 5rem;
 }
 .meiji-section-1-wrapper{
     background-color: #FFF3E5;
@@ -550,6 +564,7 @@ img.rounded-card{
     color: white;
     text-align: center;
     background-image: url(../img/meiji/new_img-3.jpg);
+    background-size: cover;
 }
 .meiji-section-3 h2{
     margin: 0 0 5rem 0;
@@ -590,12 +605,12 @@ img.rounded-card{
     width: 100%;
     overflow: hidden;
 }
-.meiji-banner:last-of-type{
+.banner-2{
     background-color: #FFF3E5;
 }
 .meiji-banner img{
     width: 200%;
-    animation: banner 6s linear infinite;
+    animation: banner 7s linear infinite;
 }
 @keyframes banner {
     from {transform: translateX(0);}
@@ -727,6 +742,9 @@ img.rounded-card{
     .meiji-content{
         padding: 5rem calc(1.5rem + 1vw);
     }
+    .disclaimer{
+        padding: 0 2rem;
+    }
 }
 
 body.dark img.right-column{
@@ -735,13 +753,13 @@ body.dark img.right-column{
 body.dark .mdior-section-1 > div:first-of-type p:first-of-type, body.dark .mdior-section-1 > div:first-of-type p:nth-of-type(3){
     color: #1c1c1c;
 }
-body.dark .exex{
+body.dark .exex,  body.dark .meiji-section-4{
     background-color: #1c1c1c;
 }
 body.dark .disclaimer{
     background-color: black;
 }
-body.dark .meiji-section-1, body.dark .meiji-section-4{
+body.dark .meiji-section-1-wrapper{
     background-color: #222222;
 }
 body.dark .meiji-section-2{

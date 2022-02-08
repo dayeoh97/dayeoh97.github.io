@@ -209,8 +209,22 @@ init = () => {
             }
         }
     }
+    murchiesScroll = () => {
+        if (document.querySelector('.murchies')){
+            if (!window.matchMedia('screen and (max-width:756px)').matches){
+                if (!contentBounds(document.querySelectorAll('.colour-swatch')[0], 6.5, 7)){
+                    navbar.classList.add('lighten');
+                } else {
+                    if (document.querySelector('.lighten')){
+                        navbar.classList.remove('lighten');
+                    }
+                }
+            }
+        }
+    }
     window.addEventListener('scroll', () => {
         eutmScroll();
+        murchiesScroll();
     })
 };
 
