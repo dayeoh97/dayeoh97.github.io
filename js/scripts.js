@@ -211,7 +211,7 @@ init = () => {
     }
     murchiesScroll = () => {
         if (document.querySelector('.murchies')){
-            if (!window.matchMedia('screen and (max-width:756px)').matches){
+            if (window.matchMedia('screen and (max-width: 1440px) and (min-width:756px)').matches){
                 if (!contentBounds(document.querySelectorAll('.colour-swatch')[0], 6.5, 7)){
                     navbar.classList.add('lighten');
                 } else {
