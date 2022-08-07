@@ -588,8 +588,10 @@ footer p{
 .case-study:last-of-type{
     margin-bottom: 0;
 }
-.case-study:first-of-type{
-    color: white;
+@media only screen and (min-width: 768px){
+    .case-study:first-of-type, body.dark .case-study:first-of-type > *{
+        color: white!important;
+    }
 }
 
 /*miss dior*/
@@ -1085,7 +1087,7 @@ footer p{
     color: #FFB0B0;
     font-weight: 700;
 }
-/*pride-month-case-studies*/
+/*pride-month-case-study*/
 .pride #hamburger-button hr{
     background-color: #DD0000;
 }
@@ -1099,48 +1101,11 @@ footer p{
     margin: 0 calc(1rem + 15vw) 5rem 22%;
 }
 
-.pride .section-p span, .pride .section-p span a{
+.pride .work-overview span a, .pride .work-overview span a{
     color: #DD0000;
     text-decoration: underline;
     position: relative;
     font-weight: 700;
-}
-
-.pride .section-p span::before{
-    content: "";
-    position: absolute;
-    bottom: 2.5rem;
-    left: calc(-4.5vh - 4.5vw - 6.13rem + 80%);
-    width: calc(9vh + 9vw + 12.25rem);
-    background-image: url(../img/pride/pride_website.jpg);
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0.2rem 1rem #9D9D9D;
-    opacity: 0;
-    height: 0;
-    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-.pride .section-p span:hover::before{
-    opacity: 1;
-    height: calc(4.9vh + 4.9vw + 6.125rem);
-}
-
-.pride .section-p span::after{
-    content: "Visit site to learn more";
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    position: absolute;
-    bottom: 0;
-    left: calc(-4.5vh - 4.5vw - 5.9rem + 80%);
-    width: calc(9vh + 9vw + 12.25rem);
-    opacity: 0;
-    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
-.pride .section-p span:hover::after{
-    opacity: 1;
-    bottom: calc(5.9vh + 5.9vw + 7.35rem);
 }
 
 #pride-shapes{
@@ -1742,13 +1707,16 @@ body.menu-switch nav.lighten #logo, body.menu-switch nav.lighten #hamburger-butt
 
 /*archive page*/
 .archive .p-header{
-    font-size: 1.3rem;
+    font-family: 'Radio Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1c1c1c;
 }
 .archive .wide-img{
     margin-bottom: 4rem;
 }
 
-.giph, .giph-2{
+.giph, .giph-2, .giph-3{
     width: auto;
     padding-top: 47%;
     margin: 0 16% 6rem 16%;
@@ -1762,6 +1730,20 @@ body.menu-switch nav.lighten #logo, body.menu-switch nav.lighten #hamburger-butt
     background-image: url(../img/archive/natural01.jpg);
     animation: giph-2 2s steps(1, end) infinite;
     margin-bottom: 0;
+}
+.giph-3{
+    background-image: url(../img/archive/DayeOh_Spreads04.jpg);
+    padding-top: 48%;
+}
+.archive-link{
+    text-decoration: none;
+}
+.archive-link span{
+    text-decoration: underline;
+    font-family: 'Radio Grotesk', sans-serif;
+}
+body.dark .archive .p-header{
+    color: #eeeeee!important;
 }
 
 @keyframes giph {
@@ -1826,6 +1808,9 @@ body.menu-switch nav.lighten #logo, body.menu-switch nav.lighten #hamburger-butt
 html.is-animating .transition-zoom, html.is-animating .transition-zoom-2, html.is-animating .transition-zoom-3, html.is-animating .transition-zoom-4, html.is-animating .transition-zoom-5, html.is-animating .transition-zoom-6, html.is-animating .transition-zoom-7{
     opacity: 0;
     transform: translateY(70%);
+}
+html.to-meijihtml.is-animating .transition-zoom, html.to-eutravelmatehtml.is-animating .transition-zoom-2, html.to-murchieshtml.is-animating .transition-zoom-3, html.to-missdiorhtml.is-animating .transition-zoom-4, html.to-pridemonthhtml.is-animating .transition-zoom-5, html.to-yorkintlhtml.is-animating .transition-zoom-6{
+    transform: translateY(-70%);
 }
 html.to-expexchtml.is-animating .transition-zoom, html.to-eutravelmatehtml.is-animating .transition-zoom-3, html.to-murchieshtml.is-animating .transition-zoom-4, html.to-missdiorhtml.is-animating .transition-zoom-5, html.to-pridemonthhtml.is-animating .transition-zoom-6, html.to-yorkintlhtml.is-animating .transition-zoom-7{
     opacity: 1;
