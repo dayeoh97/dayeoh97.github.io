@@ -6,7 +6,7 @@ init = () => {
     const navbar = document.querySelector('nav');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
-    const paddingSquare = document.querySelector('#padding-square');
+    const paddingSquare = document.querySelector('#work');
     let browserSession = window.sessionStorage;
     const currentPath = window.location.pathname;
 //index
@@ -62,7 +62,7 @@ init = () => {
     };
     browserSession.setItem("lastURL", currentPath);
     //check for the correct URL then scroll to element or top of screen
-    if (!window.location.href.includes("#padding-square")){
+    if (!window.location.href.includes("#work")){
         window.scrollTo(0, 0);
     } else {
         workScroll("auto");
