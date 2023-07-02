@@ -4,46 +4,14 @@ const swup = new Swup();
 init = () => {
     const hamButton = document.querySelector('#hamburger-button');
     const navbar = document.querySelector('nav');
-    const landingPage = document.querySelector('#index-landing');
     const logo = document.querySelector('#logo');
     const menu = document.querySelector("#menu");
     const paddingSquare = document.querySelector('#padding-square');
-    const cases = document.querySelectorAll('.case-study');
     let browserSession = window.sessionStorage;
     const currentPath = window.location.pathname;
-    let expireTime = new Date();
-    expireTime.setTime(expireTime.getTime() + 604800*1000);
-    //get desired cookie
-    getCookie = (x) =>{
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${x}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    };
-    //dark mode settings
-    //check and set a cookie for the settings mode
-    setMode = () => {
-        //change easing during switch
-        document.body.classList.add("toggle");
-        setTimeout(() => {document.body.classList.remove("toggle")}, 850);
-        //check if it is already in dark mode
-        if (getCookie("settings") == "dark") {
-            document.cookie = "settings=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        } else {
-            document.cookie = "settings=" + "dark" + "; expires=" + expireTime.toUTCString() +"; path=/;";
-        }
-        document.body.classList.toggle("dark");
-    }
-    document.querySelector('#menu button').addEventListener('click', setMode);
-    keepMode = () => {
-        //change mode by what is set in cookie
-        if (getCookie("settings") != undefined) {
-            document.body.classList.add(getCookie("settings"));
-        } else {
-            document.body.classList.remove('undefined');
-        }
-    };
-    keepMode();
 //index
+    //calculate current year
+    document.querySelector("footer span span").innerHTML = new Date().getFullYear();
     //scroll work section into view
     workScroll = (x) => {
         paddingSquare.scrollIntoView({
@@ -67,24 +35,6 @@ init = () => {
                 menuSwitch();
             };
         });
-        //same for index arrow
-        document.querySelector('#scrolldown-button').addEventListener('click', () => {
-            workScroll("smooth");
-        });
-        //use the smallest value of the viewport height to calculate landing height
-        setHeight = () => {
-                if (!window.matchMedia('screen and (max-width:756px)').matches){
-                if (window.innerWidth > window.innerHeight) {
-                    landingPage.style.height = Math.min(screen.height, window.innerHeight, document.documentElement.clientHeight) - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
-                } else {
-                    landingPage.style.height = document.documentElement.clientHeight - navbar.offsetHeight - landingPage.querySelector("div").offsetHeight + "px";
-                };
-            } else {
-                landingPage.style.height = '';
-            }
-        };
-        setHeight();
-        window.addEventListener('resize', setHeight);
         //handle loading animation
         loadingAnimation = () => {
             bodyScrollLock.disableBodyScroll(menu, {reserveScrollBarGap: true,});
@@ -93,6 +43,7 @@ init = () => {
             setTimeout(() => {
                 document.body.classList.remove('loading-animation');
                 bodyScrollLock.enableBodyScroll(menu);
+                navbar.classList.add('hidden');
             }, 3650);
         }
         //check whether animation has been played before
@@ -131,17 +82,6 @@ init = () => {
         }
     };
     hamButton.addEventListener('click', menuSwitch);
-    //get viewport size and position relative to element then apply properties on click
-    if (cases) {
-        cases.forEach(study => {
-            study.addEventListener('click', () => {
-                study.querySelector("[class*='transition']").style.top = -(study.getBoundingClientRect().top) + "px";
-                study.querySelector("[class*='transition']").style.width = document.documentElement.clientWidth + "px";
-                study.classList.toggle('hidden');
-                navbar.classList.toggle('hidden');
-            });
-        });
-    };
     //check for and then initiate carousel
     if (document.querySelector('.main-carousel')) {
         var caros = document.querySelectorAll('.main-carousel');
@@ -169,17 +109,27 @@ init = () => {
     });
     //make the navbar transparent if scroll position is less than 1 screen height
     navScroll = () => {
-        if (document.documentElement.scrollTop > 0 || window.scrollY > 0){
-            navbar.classList.add('shadow');
-        } else {
-            navbar.classList.remove('shadow');
-        };
+        if (window.matchMedia('screen and (max-width:768px)').matches){
+            if (document.documentElement.scrollTop > 0 || window.scrollY > 0){
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            };
+        }
+        if (document.querySelector('.index')){
+            if (contentBounds(document.querySelector('#home-hero'), 6.5, 7)){
+                navbar.classList.remove('hidden');
+            } else{
+                navbar.classList.add('hidden');
+            }
+        }
     };
     document.addEventListener('scroll', () => {
-        if (window.matchMedia('screen and (max-width:768px)').matches){
-            navScroll();
-        };
+        navScroll();
     });
+    if (document.querySelector('.exex')){
+        navbar.classList.add('lighten');
+    }
     contentBounds = (x, y, z) => {
         return ((x.getBoundingClientRect().top >= (window.innerHeight/y || document.documentElement.clientHeight/y) && x.getBoundingClientRect().bottom > 0) || ((x.getBoundingClientRect().bottom <= window.innerHeight/z) && x.getBoundingClientRect().top < 0))
     }
@@ -222,10 +172,45 @@ init = () => {
             }
         }
     }
+    homeScroll = () =>{
+        if (document.querySelector('.index')){
+            if (!contentBounds(document.querySelectorAll('.work-card')[0], 6.5, 7)){
+                navbar.classList.add('lighten');
+            } else {
+                if (document.querySelector('.lighten')){
+                    navbar.classList.remove('lighten');
+                }
+            }
+        }
+    }
+    exexScroll = () =>{
+        if (document.querySelector('.exex')){
+            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || !contentBounds(document.querySelectorAll('.exex-section-1')[0], 6.5, 7)){
+                navbar.classList.add('lighten');
+            } else {
+                if (document.querySelector('.lighten')){
+                    navbar.classList.remove('lighten');
+                }
+            }
+        }
+    }
     window.addEventListener('scroll', () => {
         eutmScroll();
         murchiesScroll();
+        homeScroll();
+        exexScroll();
     })
+    scrollButtons = (a, b) => {
+        if (a){
+            a.addEventListener('click', () => {
+                b.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            });
+        }
+    }
+    scrollButtons(document.querySelectorAll('.work-card')[1], document.querySelector('footer'));
 };
 
 document.addEventListener('DOMContentLoaded', init);
