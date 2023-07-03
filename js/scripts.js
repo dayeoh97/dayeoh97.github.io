@@ -193,7 +193,7 @@ init = () => {
     }
     exexScroll = () =>{
         if (document.querySelector('.exex')){
-            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || (window.matchMedia('screen and (max-width: 1440px)').matches && !contentBounds(document.querySelectorAll('.exex-section-1')[0], 6.5, 7))){
+            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || (window.matchMedia('screen and (max-width: 1440px) and (min-width: 768px)').matches && !contentBounds(document.querySelectorAll('.exex-section-1')[0], 6.5, 7))){
                 navbar.classList.add('lighten');
             } else {
                 if (document.querySelector('.lighten')){
