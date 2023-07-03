@@ -107,7 +107,7 @@ nav{
 }
 #logo div img{
     height: calc(1rem + 0.2vw);
-    transition: 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+    transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 #logo div:first-of-type{
     padding-bottom: calc(1rem + 0.2vw);
@@ -119,6 +119,9 @@ nav{
 #logo div:last-of-type img{
     opacity: 0;
     margin-right: 0.15rem;
+}
+#logo:hover img, #logo.menu-switch img, body.loading-animation #logo img{
+    transition-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
 }
 /*logo animation delays*/
 #logo div:first-of-type img:nth-of-type(2), #logo:hover div:last-of-type img:nth-of-type(2), #logo.menu-switch div:last-of-type img:nth-of-type(2){
