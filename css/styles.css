@@ -107,37 +107,37 @@ nav{
 }
 #logo div img{
     height: calc(1rem + 0.2vw);
-    transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+#logo div:first-of-type{
+    padding-bottom: calc(1rem + 0.2vw);
+}
+#logo div:last-of-type{
+    position: absolute;
+    left: 0; top: 0;
 }
 #logo div:last-of-type img{
     opacity: 0;
     margin-right: 0.15rem;
 }
-/*logo animation*/
-#logo:hover div:first-of-type img{
-    opacity: 0;
-    transform: translateY(-200%);
-}
-#logo:hover div:last-of-type img{
-    opacity: 1;
-    transform: translateY(-100%);
-}
-#logo.menu-switch div:first-of-type img{
-    opacity: 0;
-    transform: translateY(-200%);
-}
-#logo.menu-switch div:last-of-type img{
-    opacity: 1;
-    transform: translateY(-100%);
-}
-#logo div img:nth-of-type(2){
+/*logo animation delays*/
+#logo div:first-of-type img:nth-of-type(2), #logo:hover div:last-of-type img:nth-of-type(2), #logo.menu-switch div:last-of-type img:nth-of-type(2){
     transition-delay: 0.3s;
 }
-#logo div img:nth-of-type(3){
+#logo div:first-of-type img:nth-of-type(3), #logo:hover div:last-of-type img:nth-of-type(3), #logo.menu-switch div:last-of-type img:nth-of-type(3){
     transition-delay: 0.2s;
 }
-#logo div img:nth-of-type(4){
+#logo div:first-of-type img:nth-of-type(4), #logo:hover div:last-of-type img:nth-of-type(4), #logo.menu-switch div:last-of-type img:nth-of-type(4){
     transition-delay: 0.4s;
+}
+#logo:hover div:first-of-type img:nth-of-type(2), #logo.menu-switch div:first-of-type img:nth-of-type(2), #logo div:last-of-type img:nth-of-type(2){
+    transition-delay: 0.15s;
+}
+#logo:hover div:first-of-type img:nth-of-type(3), #logo.menu-switch div:first-of-type img:nth-of-type(3), #logo div:last-of-type img:nth-of-type(3){
+    transition-delay: 0.1s;
+}
+#logo:hover div:first-of-type img:nth-of-type(4), #logo.menu-switch div:first-of-type img:nth-of-type(4), #logo div:last-of-type img:nth-of-type(2){
+    transition-delay: 0.2s;
 }
 /*loading animation*/
 body.loading-animation::before{
@@ -345,7 +345,6 @@ body.loading-animation #logo div:last-of-type img:first-of-type{
     margin-left: 16%;
 }
 .large{
-    font-family: 'Epilogue', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
@@ -484,6 +483,7 @@ body.menu-switch nav.lighten #logo, body.menu-switch nav.lighten #hamburger-butt
 }
 #eutm-grid img{
     width: 100%;
+    border: 1px solid black;
 }
 .eutm .wide-img{
     margin-bottom: 7rem;

@@ -61,6 +61,16 @@ init = () => {
         };
     };
     browserSession.setItem("lastURL", currentPath);
+    // check for the homepage then loop through animation
+    if (document.querySelector('.index')){
+        const homeLogo = document.querySelector('.home-logo')
+        setInterval(() => {
+            homeLogo.classList.add('auto');
+            setTimeout(() => {
+                homeLogo.classList.remove('auto');
+            }, 2000)
+        }, 6000)
+    }
     //check for the correct URL then scroll to element or top of screen
     if (!window.location.href.includes("#work")){
         window.scrollTo(0, 0);
@@ -127,7 +137,7 @@ init = () => {
     document.addEventListener('scroll', () => {
         navScroll();
     });
-    if (document.querySelector('.exex')){
+    if (document.querySelector('.exex') || document.querySelector('.murchies')){
         navbar.classList.add('lighten');
     }
     contentBounds = (x, y, z) => {
@@ -161,13 +171,11 @@ init = () => {
     }
     murchiesScroll = () => {
         if (document.querySelector('.murchies')){
-            if (window.matchMedia('screen and (max-width: 1440px) and (min-width:756px)').matches){
-                if (!contentBounds(document.querySelectorAll('.colour-swatch')[0], 6.5, 7)){
-                    navbar.classList.add('lighten');
-                } else {
-                    if (document.querySelector('.lighten')){
-                        navbar.classList.remove('lighten');
-                    }
+            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || (window.matchMedia('screen and (max-width: 1440px) and (min-width:756px)').matches && !contentBounds(document.querySelectorAll('.colour-swatch')[0], 6.5, 7))){
+                navbar.classList.add('lighten');
+            } else {
+                if (document.querySelector('.lighten')){
+                    navbar.classList.remove('lighten');
                 }
             }
         }
@@ -185,7 +193,7 @@ init = () => {
     }
     exexScroll = () =>{
         if (document.querySelector('.exex')){
-            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || !contentBounds(document.querySelectorAll('.exex-section-1')[0], 6.5, 7)){
+            if (!contentBounds(document.querySelectorAll('.banner-img')[0], 6.5, 7) || (window.matchMedia('screen and (max-width: 1440px)').matches && !contentBounds(document.querySelectorAll('.exex-section-1')[0], 6.5, 7))){
                 navbar.classList.add('lighten');
             } else {
                 if (document.querySelector('.lighten')){

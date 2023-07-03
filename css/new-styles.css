@@ -318,7 +318,7 @@ img.rounded-card{
 }
 .mdior-section-4 li:first-of-type{
     color: #BC6886;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* Murchie's styles */
@@ -364,8 +364,14 @@ img.rounded-card{
 .exex{
     background-color: white;
 }
+.exex .banner-img{
+    object-position: bottom;
+}
 .exex nav{
     position: fixed;
+}
+.exex #hamburger-button hr{
+    background-color: #3333CC;
 }
 .exex-section-1{
     color: white;
@@ -470,6 +476,19 @@ img.rounded-card{
 .meiji-section-1 .column-layout:last-of-type p:last-of-type{
     background-color: #FFC192;
 }
+@media only screen and (max-width: 1280px) and (min-width: 901px){
+    .meiji-section-1 div.triple-layout{
+        column-gap: 1%;
+    }
+    .meiji-section-1 .column-layout p{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 900px) and (min-width: 768px){
+    .meiji-section-1 .column-layout p{
+        font-size: 12px;
+    }
+}
 
 .meiji-section-3{
     padding: 5rem 10%;
@@ -494,6 +513,9 @@ img.rounded-card{
 .meiji .not-rounded{
     margin: 0;
     display: block;
+}
+.meiji > .rounded-card.not-rounded:nth-of-type(3){
+    margin-bottom: 48px;
 }
 .meiji-section-4{
     background-color: white;
@@ -592,6 +614,9 @@ img.rounded-card{
     .meiji-section-1 .column-layout p{
         margin-left: auto; margin-right: auto;
         width: 95%;
+    }
+    .meiji > .rounded-card.not-rounded:nth-of-type(3){
+        margin-bottom: 24px;
     }
 }
 @media only screen and (max-width: 478px) {

@@ -70,40 +70,40 @@ nav.hidden #logo img{
     margin-left: auto; margin-right: 0;
 }
 
-.home-logo:hover img:first-of-type, .home-logo img:last-of-type{
+.home-logo.auto img:first-of-type, .home-logo:hover img:first-of-type, .home-logo img:last-of-type, #logo:hover div:first-of-type img, #logo.menu-switch div:first-of-type img{
     opacity: 0;
     transform: scaleX(1.05);
     filter: blur(4px);
 }
-.home-logo:hover img:last-of-type{
+.home-logo.auto img:last-of-type, .home-logo:hover img:last-of-type, #logo:hover div:last-of-type img, #logo.menu-switch div:last-of-type img{
     opacity: 1;
     transform: scaleX(1);
     filter: blur(0px);
 }
 /* controls delay for home-logo */
-.home-logo_letter-container:nth-of-type(1) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(1) img:last-of-type{
+.home-logo_letter-container:nth-of-type(1) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(1) img:last-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(1) img:last-of-type{
     transition-delay: 0.1s;
 }
-.home-logo_letter-container:nth-of-type(2) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(2) img:last-of-type{
+.home-logo_letter-container:nth-of-type(2) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(2) img:last-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(2) img:last-of-type{
     transition-delay: 0.3s;
 }
-.home-logo_letter-container:nth-of-type(3) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(3) img:last-of-type{
+.home-logo_letter-container:nth-of-type(3) img:first-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(3) img:last-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(3) img:last-of-type{
     transition-delay: 0.2s;
 }
 .home-logo_letter-container:nth-of-type(4) img:first-of-type,
-.home-logo:hover .home-logo_letter-container:nth-of-type(4) img:last-of-type{
+.home-logo:hover .home-logo_letter-container:nth-of-type(4) img:last-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(4) img:last-of-type{
     transition-delay: 0.4s;
 }
-.home-logo_letter-container:nth-of-type(1) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(1) img:first-of-type{
+.home-logo_letter-container:nth-of-type(1) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(1) img:first-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(1) img:first-of-type{
     transition-delay: 0.05s;
 }
-.home-logo_letter-container:nth-of-type(2) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(2) img:first-of-type{
+.home-logo_letter-container:nth-of-type(2) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(2) img:first-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(2) img:first-of-type{
     transition-delay: 0.15s;
 }
-.home-logo_letter-container:nth-of-type(3) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(3) img:first-of-type{
+.home-logo_letter-container:nth-of-type(3) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(3) img:first-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(3) img:first-of-type{
     transition-delay: 0.1s;
 }
-.home-logo_letter-container:nth-of-type(4) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(4) img:first-of-type{
+.home-logo_letter-container:nth-of-type(4) img:last-of-type, .home-logo:hover .home-logo_letter-container:nth-of-type(4) img:first-of-type, .home-logo.auto .home-logo_letter-container:nth-of-type(4) img:first-of-type{
     transition-delay: 0.2s;
 }
 
@@ -173,11 +173,14 @@ nav.hidden #logo img{
     font-size: 50px;
     margin: 0;
 }
+.work-card > div > h2{
+    margin-bottom: 10px;
+}
 .work-card h3{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 400;
     margin: 0;
-    max-width: 554px;
+    max-width: 530px;
 }
 .work-card:hover > div{
     opacity: 1;
@@ -189,9 +192,6 @@ nav.hidden #logo img{
     }
     .work-card > div > h2, footer h2{
         font-size: 32px;
-    }
-    .work-card h3{
-        font-size: 20px;
     }
 }
 
@@ -232,7 +232,7 @@ nav.hidden #logo img{
         width: 24px;
     }
 }
-.exex #see-more a:first-of-type, .meiji #see-more a:last-of-type{
+.exex #see-more a:first-of-type, .eutm #see-more a:last-of-type{
     opacity: 0;
     user-select: none;
     pointer-events: none;
